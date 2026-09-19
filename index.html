@@ -12,13 +12,13 @@
                 lockDiv.style.cssText = "position:fixed; top:0; left:0; width:100vw; height:100vh; background:#0f172a; z-index:9999999; display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; font-family:'Inter', sans-serif; visibility:visible;";
                 
                 lockDiv.innerHTML = `
-                    <div style="background:#1e293b; padding:40px; border-radius:12px; text-align:center; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5); border: 1px solid #334155; max-width:90%; width:400px;">
-                        <h2 style="margin-bottom:10px; color:#10b981; font-size:1.8rem;">Restricted Access 🛡️</h2>
-                        <p style="color:#94a3b8; margin-bottom:25px; line-height:1.5;">This portal is strictly for registered students of Excellent Institute.</p>
+                    <div style="background:#1e293b; padding:50px; border-radius:16px; text-align:center; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5); border: 1px solid #334155; max-width:90%; width:450px;">
+                        <h2 style="margin-bottom:15px; color:#10b981; font-size:2rem;">Restricted Access 🛡️</h2>
+                        <p style="color:#94a3b8; margin-bottom:30px; line-height:1.6; font-size:1.1rem;">This portal is strictly for registered students of Excellent Institute.</p>
                         
-                        <input type="email" id="authEmail" placeholder="Enter Authorized Email" style="width:100%; padding:14px; margin-bottom:20px; border-radius:8px; border:2px solid #334155; background:#0f172a; color:white; text-align:center; outline:none; font-size:1.1rem; transition: border-color 0.2s;">
+                        <input type="email" id="authEmail" placeholder="Enter Authorized Email" style="width:100%; padding:16px; margin-bottom:25px; border-radius:8px; border:2px solid #334155; background:#0f172a; color:white; text-align:center; outline:none; font-size:1.15rem; transition: border-color 0.2s;">
                         
-                        <button onclick="verifyAccess()" style="width:100%; padding:14px; background:#10b981; color:white; border:none; border-radius:8px; font-size:1.1rem; font-weight:bold; cursor:pointer; transition: background 0.2s;">
+                        <button onclick="verifyAccess()" style="width:100%; padding:16px; background:#10b981; color:white; border:none; border-radius:8px; font-size:1.2rem; font-weight:bold; cursor:pointer; transition: background 0.2s;">
                             Verify Connection
                         </button>
                         
@@ -48,7 +48,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excellent Institute - Tally Prime 7.0 Masterclass</title>
+    <title>Excellent Institute - Tally Prime 7.0 Advanced Pro</title>
     <!-- Modern Font Integration -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
@@ -59,14 +59,14 @@
             --primary-light: #ccfbf1;
             --accent: #0d9488;
             --surface: #ffffff;
-            --background: #f8fafc; 
+            --background: #f1f5f9; 
             --text-main: #0f172a;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
+            --text-muted: #475569;
+            --border: #cbd5e1;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-            --radius: 12px;
+            --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --radius: 16px;
         }
         
         * { box-sizing: border-box; }
@@ -84,7 +84,7 @@
         }
 
         /* --- Custom Scrollbar --- */
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #99f6e4; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #5eead4; }
@@ -94,7 +94,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 24px;
+            padding: 16px 32px;
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
@@ -105,28 +105,26 @@
         .brand {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 18px;
         }
 
-        /* Sidebar Toggle Button */
         .toggle-btn {
             background: none;
             border: none;
             color: var(--primary);
             cursor: pointer;
-            padding: 6px;
+            padding: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 6px;
+            border-radius: 8px;
             transition: background 0.2s ease;
         }
         .toggle-btn:hover { background-color: var(--primary-light); }
 
-        /* Circular Logo */
         .brand img.logo {
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%; 
             object-fit: cover;
             border: 2px solid var(--accent);
@@ -134,189 +132,238 @@
             cursor: pointer;
         }
 
-        .brand h2 { margin: 0; color: var(--primary); font-size: 1.3rem; font-weight: 700; cursor: pointer; }
+        .brand h2 { margin: 0; color: var(--primary); font-size: 1.5rem; font-weight: 800; cursor: pointer; }
 
-        /* Print Button */
         .action-btns button {
             background-color: var(--surface);
             color: var(--text-main);
             border: 1px solid var(--border);
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 8px;
             cursor: pointer;
-            font-weight: 600;
+            font-size: 1.05rem;
+            font-weight: 700;
             font-family: inherit;
             transition: all 0.2s ease;
             box-shadow: var(--shadow-sm);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
         .action-btns button:hover { 
-            background-color: var(--background);
-            border-color: var(--text-muted);
-            transform: translateY(-1px);
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-2px);
         }
 
         /* --- Main Layout & Sidebar --- */
         .main-container { display: flex; flex: 1; overflow: hidden; }
 
-        /* Sidebar with Smooth Collapse Transition */
+        /* Wider, Roomier Sidebar */
         .sidebar {
-            width: 320px;
+            width: 350px;
             background-color: var(--surface);
             border-right: 1px solid var(--border);
-            padding: 24px 16px;
+            padding: 30px 20px;
             overflow-y: auto;
             overflow-x: hidden;
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 8px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 1;
         }
         
-        /* The Collapsed State for Sidebar */
         .sidebar.collapsed {
             width: 0;
-            padding: 24px 0;
+            padding: 30px 0;
             border-right: none;
             opacity: 0;
         }
         
         .nav-label {
-            font-size: 0.75rem; text-transform: uppercase; font-weight: 700;
-            color: var(--text-muted); margin-bottom: 10px; padding-left: 12px;
-            white-space: nowrap;
+            font-size: 0.85rem; text-transform: uppercase; font-weight: 800;
+            color: var(--text-muted); margin-bottom: 15px; padding-left: 12px;
+            white-space: nowrap; letter-spacing: 0.05em;
         }
 
         .nav-btn {
-            display: flex; align-items: center; width: 100%; padding: 12px 16px;
-            border: none; background: none; text-align: left; font-size: 0.95rem;
+            display: flex; align-items: center; width: 100%; padding: 14px 18px;
+            border: none; background: none; text-align: left; font-size: 1.05rem;
             font-weight: 600; color: var(--text-muted); cursor: pointer;
-            border-radius: var(--radius); transition: all 0.2s ease;
-            white-space: nowrap;
+            border-radius: 10px; transition: all 0.2s ease;
+            white-space: nowrap; line-height: 1.4;
         }
-        .nav-btn:hover { background-color: var(--background); color: var(--text-main); }
+        .nav-btn:hover { background-color: #f1f5f9; color: var(--text-main); }
         .nav-btn.active { background-color: var(--primary-light); color: var(--primary); }
 
-        /* --- Content Area & Drag-to-Scroll --- */
+        /* --- Content Area & Wide Wrapper --- */
         .content-area {
-            flex: 1; padding: 40px 60px; overflow-y: auto;
+            flex: 1; padding: 40px 0; overflow-y: auto;
             background-color: transparent; 
             cursor: grab; scroll-behavior: smooth;
         }
         .content-area:active { cursor: grabbing; } 
 
         .content-wrapper {
-            max-width: 1200px; margin: 0 auto; background: var(--surface);
-            padding: 40px 50px; border-radius: var(--radius);
-            box-shadow: var(--shadow-md); animation: fadeIn 0.4s ease forwards;
-            position: relative; z-index: 2; transition: max-width 0.3s ease;
+            max-width: 1400px; /* Expanded Width */
+            width: 94%;
+            margin: 0 auto; 
+            background: transparent; /* Removed flat white background */
+            animation: fadeIn 0.4s ease forwards;
+            position: relative; z-index: 2;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .note-section { pointer-events: none; }
         .note-section.allow-select { pointer-events: auto; }
 
-        /* Typography */
-        .note-section h1 { color: var(--text-main); font-size: 2.2rem; font-weight: 800; margin: 0 0 30px 0; border-bottom: 2px solid var(--border); padding-bottom: 15px;}
-        .note-section h3 { color: var(--primary); font-size: 1.4rem; margin-top: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-        .note-section p, .note-section li { line-height: 1.7; font-size: 1.1rem; color: #334155; }
+        /* NEW SPATIAL DESIGN: Topic Cards */
+        .note-section h1 { 
+            text-align: center; color: var(--primary); font-size: 2.8rem; font-weight: 800; 
+            margin: 20px 0 50px 0; letter-spacing: -0.02em;
+        }
+
+        .topic-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 50px 60px; /* Huge breathing room */
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .topic-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .topic-card h3 { 
+            color: var(--text-main); font-size: 1.7rem; font-weight: 800; 
+            margin: 0 0 20px 0; padding-bottom: 15px; border-bottom: 2px solid #e2e8f0; 
+        }
+        
+        .topic-card p, .topic-card li { 
+            line-height: 1.8; font-size: 1.15rem; color: #334155; margin-bottom: 20px;
+        }
 
         /* KEYBOARD SHORTCUT STYLING */
         .shortcut-box {
             background-color: var(--primary-light);
-            border-left: 4px solid var(--accent);
-            padding: 12px 16px;
-            margin: 15px 0;
-            border-radius: 0 8px 8px 0;
+            border-left: 5px solid var(--accent);
+            padding: 16px 24px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.05rem;
+            gap: 15px;
+            font-size: 1.15rem;
             color: var(--primary);
+            width: 100%; /* Make it fill the card */
         }
         
         kbd {
             background-color: #ffffff;
             border: 1px solid #cbd5e1;
-            border-bottom: 3px solid #94a3b8;
-            border-radius: 6px;
-            padding: 4px 8px;
-            font-size: 0.9em;
+            border-bottom: 4px solid #94a3b8;
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-size: 0.95em;
             font-family: 'Courier New', Courier, monospace;
             color: #1e293b;
-            font-weight: 700;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            font-weight: 800;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        /* Clickable Images */
-        .note-section img {
-            max-width: 600px; width: 100%; height: auto; border: 1px solid var(--border);
-            border-radius: 8px; margin: 25px auto 30px auto; display: block; box-shadow: var(--shadow-sm);
-            cursor: zoom-in; pointer-events: auto; transition: transform 0.2s;
+        /* Bigger, clearer Images */
+        .topic-card img {
+            max-width: 900px; /* Expanded for high-res visibility */
+            width: 100%; height: auto; border: 1px solid var(--border);
+            border-radius: 12px; margin: 35px auto 20px auto; display: block; 
+            box-shadow: var(--shadow-sm); cursor: zoom-in; pointer-events: auto; 
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .note-section img:hover { transform: scale(1.01); box-shadow: var(--shadow-md); }
-        .img-caption { font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-bottom: 30px; }
+        .topic-card img:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
+        .img-caption { font-size: 1rem; color: var(--text-muted); text-align: center; font-weight: 600; margin-bottom: 10px; }
 
         /* --- Dashboard Grid (Home View) --- */
-        .hero { text-align: center; margin-bottom: 40px; }
-        .hero h1 { font-size: 2.5rem; color: var(--text-main); margin-bottom: 10px; }
-        .hero p { color: var(--text-muted); font-size: 1.1rem; }
+        .hero { text-align: center; margin-bottom: 60px; margin-top: 20px; }
+        .hero h1 { font-size: 3rem; color: var(--text-main); margin-bottom: 15px; font-weight: 800; }
+        .hero p { color: var(--text-muted); font-size: 1.25rem; }
         
-        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; pointer-events: auto; }
+        .dashboard-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); /* Bigger cards */
+            gap: 32px; /* Wider gaps */
+            pointer-events: auto; 
+        }
+        
         .module-card {
             background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-            padding: 24px; cursor: pointer; transition: all 0.3s ease; box-shadow: var(--shadow-sm);
-            display: flex; flex-direction: column; align-items: flex-start;
+            padding: 32px; cursor: pointer; transition: all 0.3s ease; box-shadow: var(--shadow-md);
+            display: flex; flex-direction: column; align-items: flex-start; height: 100%;
         }
-        .module-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+        .module-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
         .card-icon {
-            font-size: 2rem; margin-bottom: 15px; background: var(--primary-light);
-            width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px;
+            font-size: 2.5rem; margin-bottom: 20px; background: var(--primary-light);
+            width: 65px; height: 65px; display: flex; align-items: center; justify-content: center; border-radius: 14px;
         }
-        .module-card h3 { margin: 0 0 10px 0; color: var(--text-main); font-size: 1.2rem; }
-        .module-card span { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+        .module-card h3 { margin: 0 0 12px 0; color: var(--text-main); font-size: 1.4rem; line-height: 1.3; }
+        .module-card span { font-size: 0.95rem; color: var(--text-muted); font-weight: 700; background: #f1f5f9; padding: 6px 12px; border-radius: 20px;}
 
         /* --- Zoomable Lightbox Modal --- */
         #lightbox {
             display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(15, 23, 42, 0.9); backdrop-filter: blur(5px);
+            background-color: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px);
             overflow: auto; text-align: center; padding: 50px 20px;
         }
         #lightbox img { 
             display: inline-block; vertical-align: middle;
-            max-width: 90%; max-height: 85vh; border-radius: 8px; 
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); 
+            max-width: 95%; max-height: 90vh; border-radius: 12px; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8); 
             cursor: zoom-in; transition: all 0.3s ease; transform-origin: top center;
         }
         #lightbox img.zoomed {
-            max-width: none; max-height: none; width: 140%; cursor: zoom-out; margin-bottom: 50px;
+            max-width: none; max-height: none; width: 150%; cursor: zoom-out; margin-bottom: 50px;
         }
 
         /* --- Universal Watermark --- */
         .watermark-bg {
             position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 45vw; max-width: 400px; opacity: 0.04; pointer-events: none; 
-            z-index: 9999; border-radius: 50%; object-fit: cover;
+            width: 45vw; max-width: 400px; opacity: 0.03; pointer-events: none; 
+            z-index: 1; border-radius: 50%; object-fit: cover;
+        }
+
+        /* --- Password Lock Screen Wrapper --- */
+        .lock-card-wrapper {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 80px 40px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            max-width: 700px;
+            margin: 10vh auto;
+            pointer-events: auto;
         }
 
         /* --- Responsive Design (Mobile) --- */
         @media (max-width: 768px) {
             .main-container { flex-direction: column; }
-            .sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); flex-direction: row; overflow-x: auto; padding: 12px; gap: 10px;}
+            .sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); flex-direction: row; overflow-x: auto; padding: 16px; gap: 12px;}
             .sidebar.collapsed { height: 0; padding: 0; border: none; opacity: 0; }
             .nav-label { display: none; }
-            .nav-btn { white-space: nowrap; padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border); }
-            .content-area { padding: 20px 15px; }
-            .content-wrapper { padding: 25px 20px; }
-            .watermark-bg { width: 70vw; }
+            .nav-btn { white-space: nowrap; padding: 10px 20px; border-radius: 30px; border: 1px solid var(--border); }
+            .content-area { padding: 20px 10px; }
+            .content-wrapper { padding: 0; width: 100%; }
+            .topic-card { padding: 30px 20px; }
+            .watermark-bg { width: 80vw; }
         }
 
         /* --- Print & PDF Export Styling --- */
@@ -324,12 +371,13 @@
             body, .main-container { height: auto; overflow: visible; display: block; background-color: transparent !important; }
             .sidebar, .header, .action-btns, .dashboard-grid, .hero { display: none !important; }
             .content-area { padding: 0; cursor: auto; background-color: transparent !important; }
-            .content-wrapper { margin: 0; padding: 0; box-shadow: none; border: none; max-width: 100%; background: transparent !important; }
+            .content-wrapper { margin: 0; padding: 0; box-shadow: none; border: none; max-width: 100%; width: 100%; background: transparent !important; }
+            .topic-card { border: none; box-shadow: none; padding: 20px 0; margin-bottom: 20px; page-break-inside: avoid; }
             .note-section { pointer-events: auto; }
             .watermark-bg { display: block; opacity: 0.08; width: 60vw; max-width: 600px; }
             h1 { page-break-before: always; color: #000; }
             h1:first-of-type { page-break-before: auto; }
-            h3 { color: #000; border-bottom: 1px solid #ccc; }
+            h3 { color: #000; border-bottom: 2px solid #ccc; }
             img { page-break-inside: avoid; border: none; }
             p, h3, .shortcut-box { page-break-inside: avoid; }
             .shortcut-box { border: 1px solid #000 !important; background: transparent !important; color: #000 !important; }
@@ -344,7 +392,7 @@
         <div class="brand">
             <!-- Sidebar Toggle Button -->
             <button id="sidebar-toggle" class="toggle-btn" onclick="toggleSidebar()" title="Hide/Show Menu">
-                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
@@ -352,7 +400,7 @@
             <h2 onclick="loadDashboard()">Excellent Institute</h2>
         </div>
         <div class="action-btns">
-            <button onclick="window.print()">🖨️ Print / PDF</button>
+            <button onclick="window.print()">🖨️ Print / Save as PDF</button>
         </div>
     </div>
 
@@ -365,8 +413,8 @@
         <!-- Sidebar -->
         <div class="sidebar" id="main-sidebar">
             <div class="nav-label">Course Modules</div>
-            <button class="nav-btn active" onclick="loadDashboard()" id="home-btn">🏠 Dashboard</button>
-            <div id="nav-container" style="display: flex; flex-direction: column; gap: 6px;">
+            <button class="nav-btn active" onclick="loadDashboard()" id="home-btn">🏠 Main Dashboard</button>
+            <div id="nav-container" style="display: flex; flex-direction: column; gap: 8px;">
                 <!-- JavaScript will inject chapter buttons here -->
             </div>
         </div>
@@ -391,8 +439,8 @@
         const contentDisplay = document.getElementById('content-display');
         const sidebar = document.getElementById('main-sidebar');
         
-        // Tally Course Exclusive Lock
-        let isTallyUnlocked = false; 
+        // PGDCA Exclusive Lock
+        let isPgdcaUnlocked = false; 
 
         // 1. Initialize Application
         function initApp() {
@@ -407,7 +455,7 @@
                 btn.className = 'nav-btn note-nav-btn';
                 
                 // Everything is strictly locked initially
-                let displayIcon = isTallyUnlocked ? '📒' : '🔒';
+                let displayIcon = isPgdcaUnlocked ? '📒' : '🔒';
                 
                 btn.innerHTML = `${displayIcon} ${chapter.title.split(':')[0]}`; 
                 
@@ -428,17 +476,17 @@
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
 
             let html = `
-            <div class="content-wrapper allow-select" style="text-align: center; margin-top: 5vh;">
-                <h1 style="font-size: 2.8rem; color: var(--primary); margin-bottom: 10px;">Tally Prime 7.0 Masterclass</h1>
-                <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px;">Exclusive Tally Course: Complete Accounting, GST, and Automation.</p>
+            <div class="content-wrapper allow-select" style="text-align: center; margin-top: 5vh; background: transparent; box-shadow: none;">
+                <h1 style="font-size: 3.2rem; color: var(--primary); margin-bottom: 15px; font-weight:800;">Tally Prime 7.0 (Advanced Pro)</h1>
+                <p style="font-size: 1.3rem; color: var(--text-muted); margin-bottom: 40px;">PGDCA Exclusive: Deep-dive Professional Accounting and Automation.</p>
                 
                 <!-- Application Preview Image -->
-                <img src="images/tpro-preview.jpg" alt="App Preview" style="width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 2px solid var(--border); margin-bottom: 40px; cursor: zoom-in;" onclick="openLightbox(this.src)">
+                <img src="images/tpro-preview.jpg" alt="App Preview" style="width: 100%; max-width: 600px; border-radius: 16px; box-shadow: var(--shadow-lg); border: 1px solid var(--border); margin-bottom: 50px; cursor: zoom-in;" onclick="openLightbox(this.src)">
                 <br>
                 
                 <!-- The Enter Button -->
-                <button onclick="loadDashboard()" style="background-color: var(--primary); color: white; border: none; padding: 15px 40px; font-size: 1.2rem; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: var(--shadow-md);">
-                    Enter Tally Portal 🚀
+                <button onclick="loadDashboard()" style="background-color: var(--primary); color: white; border: none; padding: 18px 50px; font-size: 1.3rem; border-radius: 12px; cursor: pointer; font-weight: 800; box-shadow: var(--shadow-lg); transition: transform 0.2s;">
+                    Enter Pro Portal 🚀
                 </button>
             </div>`;
             
@@ -452,10 +500,10 @@
             document.getElementById('home-btn').classList.add('active');
 
             let html = `
-            <div class="content-wrapper allow-select">
+            <div class="content-wrapper allow-select" style="background: transparent; box-shadow: none;">
                 <div class="hero">
-                    <h1>Tally Prime 7.0 Professional Course</h1>
-                    <p>Dedicated curriculum for specialized accounting students.</p>
+                    <h1>Tally Prime 7.0 Advanced Pro</h1>
+                    <p>Exclusive curriculum for professional accountants and PGDCA students.</p>
                 </div>
                 <div class="dashboard-grid">`;
             
@@ -463,9 +511,9 @@
             if (typeof tallyProBookData !== 'undefined') {
                 tallyProBookData.forEach((chapter, index) => {
                     
-                    let isLocked = !isTallyUnlocked;
+                    let isLocked = !isPgdcaUnlocked;
                     let icon = isLocked ? '🔒' : '📒';
-                    let lockedText = isLocked ? '<span style="color:#ef4444; font-size:0.9rem;"> (Locked)</span>' : '';
+                    let lockedText = isLocked ? '<span style="color:#ef4444; font-size:0.95rem; margin-left: 8px;"> (PGDCA Locked)</span>' : '';
                     
                     html += `
                         <div class="module-card" onclick="document.querySelectorAll('.note-nav-btn')[${index}].click()">
@@ -486,22 +534,24 @@
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             if(clickedBtn) clickedBtn.classList.add('active');
 
-            // --- STRICT TALLY COURSE LOCK ---
-            if (!isTallyUnlocked) {
+            // --- STRICT PGDCA EXCLUSIVE LOCK ---
+            if (!isPgdcaUnlocked) {
                 let lockHtml = `
-                <div class="content-wrapper allow-select" style="text-align: center; padding: 80px 20px;">
-                    <div style="font-size: 5rem; margin-bottom: 10px;">🔒</div>
-                    <h2 style="color: var(--primary); font-size: 2rem;">Course Modules Locked</h2>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 25px;">This detailed masterclass is restricted to specialized Tally students. Please enter the TALLY password to access all modules.</p>
-                    
-                    <input type="password" id="tallyPass" placeholder="Password" style="padding: 12px; font-size: 1.2rem; border: 2px solid var(--primary); border-radius: 8px; width: 100%; max-width: 250px; text-align: center; outline: none;">
-                    <br><br>
-                    
-                    <button onclick="checkTallyPassword(${index})" style="background-color: var(--primary); color: white; border: none; padding: 12px 40px; font-size: 1.1rem; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: var(--shadow-md);">
-                        Unlock 🔓
-                    </button>
-                    
-                    <p id="wrong-pass-msg" style="color: #ef4444; font-weight: bold; margin-top: 15px; display: none;">❌ Access Denied! Incorrect Password.</p>
+                <div class="content-wrapper allow-select" style="background: transparent; box-shadow: none;">
+                    <div class="lock-card-wrapper">
+                        <div style="font-size: 6rem; margin-bottom: 20px;">🔒</div>
+                        <h2 style="color: var(--primary); font-size: 2.5rem; font-weight:800; margin-bottom: 20px;">PGDCA Masterclass Locked</h2>
+                        <p style="color: var(--text-muted); font-size: 1.25rem; margin-bottom: 40px; line-height: 1.6;">This detailed masterclass is restricted to the PGDCA syllabus. Please enter your PGDCA password to access all modules.</p>
+                        
+                        <input type="password" id="pgdcaPass" placeholder="Enter PGDCA Password" style="padding: 16px; font-size: 1.3rem; border: 2px solid var(--primary); border-radius: 12px; width: 100%; max-width: 300px; text-align: center; outline: none; margin-bottom: 30px;">
+                        <br>
+                        
+                        <button onclick="checkPgdcaPassword(${index})" style="background-color: var(--primary); color: white; border: none; padding: 16px 50px; font-size: 1.25rem; border-radius: 10px; cursor: pointer; font-weight: 800; box-shadow: var(--shadow-md); transition: transform 0.2s;">
+                            Unlock Course 🔓
+                        </button>
+                        
+                        <p id="wrong-pass-msg" style="color: #ef4444; font-weight: 800; font-size: 1.1rem; margin-top: 25px; display: none;">❌ Access Denied! DCA Passwords are not accepted here.</p>
+                    </div>
                 </div>`;
                 
                 contentDisplay.innerHTML = lockHtml;
@@ -510,14 +560,16 @@
                 return; 
             }
 
-            // --- Render the Actual Content ---
+            // --- Render the Actual Spaced-Out Content ---
             const chapter = tallyProBookData[index];
             let htmlContent = `
             <div class="content-wrapper">
                 <div class="note-section allow-select">
                     <h1>${chapter.title}</h1>`;
             
+            // Loop through topics and wrap each one in a spacious .topic-card
             chapter.topics.forEach(topic => {
+                htmlContent += `<div class="topic-card">`;
                 htmlContent += `<h3>${topic.heading}</h3>`;
                 htmlContent += `<p>${topic.text}</p>`;
                 
@@ -533,8 +585,11 @@
                     htmlContent += `<img src="${topic.imgSrc}" alt="${topic.heading}" onclick="openLightbox(this.src)">`;
                     htmlContent += `<div class="img-caption">Figure: ${topic.heading}</div>`;
                 }
+                
+                htmlContent += `</div>`; // Close topic-card
             });
-            htmlContent += `</div></div>`;
+            
+            htmlContent += `</div></div>`; // Close note-section and content-wrapper
             
             contentDisplay.innerHTML = htmlContent;
             contentDisplay.scrollTop = 0;
@@ -544,12 +599,12 @@
             }
         }
 
-        // 6. Verify Tally Password
-        function checkTallyPassword(index) {
-            const input = document.getElementById('tallyPass').value.trim().toUpperCase(); 
+        // 6. Verify PGDCA Password
+        function checkPgdcaPassword(index) {
+            const input = document.getElementById('pgdcaPass').value.trim().toUpperCase(); 
             
-            if (input === "TALLY") {
-                isTallyUnlocked = true;
+            if (input === "PGDCA") {
+                isPgdcaUnlocked = true;
                 
                 // Instantly turn all 🔒 into 📒
                 document.querySelectorAll('.note-nav-btn').forEach((btn) => {
@@ -589,7 +644,7 @@
         let scrollTop;
 
         contentDisplay.addEventListener('mousedown', (e) => {
-            if(e.target.closest('.module-card') || e.target.tagName === 'IMG' || e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON') return;
+            if(e.target.closest('.module-card') || e.target.closest('.topic-card') || e.target.tagName === 'IMG' || e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON') return;
             isDown = true;
             startY = e.pageY - contentDisplay.offsetTop;
             scrollTop = contentDisplay.scrollTop;
