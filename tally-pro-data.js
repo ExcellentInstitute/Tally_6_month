@@ -1,577 +1,561 @@
 // tally-pro-data.js
-// Excellent Institute - Advanced Tally Prime 7.0 & Accounting Professional Course (150-Day Syllabus)
+// Excellent Institute - Advanced Tally Prime 7.0 & Accounting Professional Course
+// 6-Month Intensive Curriculum (150 Days)
 
 const tallyProBookData = [
     // ==========================================
-    // MODULE 1: INTRODUCTION TO ACCOUNTING (Month 1)
+    // MONTH 1: ACCOUNTING FOUNDATIONS & TALLY INITIATION
+    // Target: Master manual accounting rules, journal entries, and Tally UI navigation.
     // ==========================================
     {
-        id: "chapter1",
-        title: "Module 1: Introduction to Accounting (Month 1)",
+        id: "month1",
+        title: "Month 1: Foundations & Tally UI (Days 1-25)",
         topics: [
             {
-                heading: "Fundamental Principles of Accounting",
-                text: `Accounting is the universal language of business. It is the systematic process of recording, summarizing, analyzing, and reporting financial transactions.<br><br>
-                <strong>Key Principles:</strong><br>
-                1. <strong>Business Entity Concept:</strong> The owner and the business are two completely separate entities. If the owner takes cash for personal use, it is recorded as 'Drawings'.<br>
-                2. <strong>Going Concern:</strong> We assume the business will run forever. This is why we record long-term assets (like land) at their original cost.<br>
-                3. <strong>Accrual Concept:</strong> Incomes and expenses are recorded when they occur, not when the cash is actually exchanged. If rent is due for March, it is recorded in March, even if paid in April.<br>
-                4. <strong>Dual Aspect (The Accounting Equation):</strong> Assets = Liabilities + Owner's Equity (Capital). Every transaction affects both sides equally.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 1 to Day 5</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Write down 20 real-world business scenarios in a notebook. Identify which accounting principle (Accrual, Entity, or Dual Aspect) applies to each scenario.
+                heading: "Week 1 (Days 1-5): Fundamental Principles & Golden Rules",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 1: Introduction to Accounting & Entity Concept</strong><br>
+                    <em>Theory:</em> Accounting is the language of business. Understand the Business Entity Concept (Owner and Business are separate) and Going Concern Concept.<br>
+                    <em>Practical:</em> Analyze a list of 20 expenses and categorize them into 'Business Expense' vs 'Personal Drawings'.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 2: Accrual Concept & Dual Aspect</strong><br>
+                    <em>Theory:</em> Incomes/expenses are recorded when they occur, not just when cash moves. The Accounting Equation: Assets = Liabilities + Capital.<br>
+                    <em>Practical:</em> Solve 5 equations proving Assets always equal Liabilities + Capital.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 3: The Golden Rules - Real Accounts</strong><br>
+                    <em>Theory:</em> Real Accounts deal with tangible Assets (Cash, Furniture). Rule: Debit what comes in, Credit what goes out.<br>
+                    <em>Practical:</em> Write Dr/Cr for 15 asset purchase/sale transactions.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 4: The Golden Rules - Personal Accounts</strong><br>
+                    <em>Theory:</em> Personal Accounts deal with People/Banks. Rule: Debit the receiver, Credit the giver.<br>
+                    <em>Practical:</em> Pass manual entries for money given to and received from 10 different suppliers.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 5: The Golden Rules - Nominal Accounts</strong><br>
+                    <em>Theory:</em> Nominal Accounts deal with Expenses/Incomes. Rule: Debit all expenses/losses, Credit all incomes/gains.<br>
+                    <em>Practical:</em> Identify Nominal accounts from a 30-item mixed list and apply the rule.
                 </div>`,
-                shortcut: "Accounting's ultimate goal is twofold: Ascertaining Profit/Loss (via P&L) and showing Financial Position (via Balance Sheet).",
+                shortcut: "Accounting's ultimate goal: Ascertaining Profit/Loss (via P&L) and showing Financial Position (via Balance Sheet).",
                 imgSrc: "images/tpro-01-principles.jpg"
             },
             {
-                heading: "Types of Accounts (The Golden Rules)",
-                text: `To record any transaction accurately, you MUST memorize the Three Golden Rules of Accounting. Every account falls into one of three categories:<br><br>
-                <strong>1. Real Account (Assets & Properties):</strong> Tangible things like Cash, Furniture, Computers, and Land.<br>
-                👉 <em>Rule: Debit what comes in, Credit what goes out.</em><br><br>
-                <strong>2. Personal Account (People & Companies):</strong> Names of individuals, bank accounts, suppliers, and customers (e.g., SBI Bank, Rahul Traders).<br>
-                👉 <em>Rule: Debit the receiver, Credit the giver.</em><br><br>
-                <strong>3. Nominal Account (Expenses & Incomes):</strong> Things that represent money spent or earned, like Rent, Salary, Sales, and Commission.<br>
-                👉 <em>Rule: Debit all expenses and losses, Credit all incomes and gains.</em>
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 6 to Day 10</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Teacher provides a list of 50 ledger names (e.g., Machinery, Wages, HDFC Bank). Students must manually classify them into Real, Personal, or Nominal accounts in their notebooks.
+                heading: "Week 2 (Days 6-10): Journal Entries & Ledger Posting",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 6-7: Double Entry System & Journal Drafts</strong><br>
+                    <em>Theory:</em> Formatting a formal Journal (Date, Particulars, L.F, Dr, Cr). Writing narrations.<br>
+                    <em>Practical:</em> Draft 40 complete Journal Entries for a mock startup business covering capital, purchases, and sales.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 8-10: Ledger Posting & Balancing</strong><br>
+                    <em>Theory:</em> Transferring Journals to individual 'T-format' Ledgers. Balancing the accounts (c/d and b/d).<br>
+                    <em>Practical:</em> Create 15 distinct ledgers from the previous days' journals and calculate their exact closing balances.
                 </div>`,
-                shortcut: "Memorizing the Golden Rules is the absolute foundation of passing any accounting interview.",
-                imgSrc: "images/tpro-02-golden-rules.jpg"
+                shortcut: "Debit (Dr.) and Credit (Cr.) must ALWAYS equal exactly the same amount in every entry.",
+                imgSrc: "images/tpro-02-journal.jpg"
             },
             {
-                heading: "Double Entry System & Journal Entries",
-                text: `The Double Entry System means every transaction has two opposite effects: a Debit (Dr) and a Credit (Cr). They must always equal the same amount.<br><br>
-                <strong>Example 1 (Starting Business):</strong> You start a business with ₹1,00,000 Cash.<br>
-                - Cash Account (Real A/c) comes in 👉 Dr. 1,00,000<br>
-                - Capital Account (Personal A/c) gives 👉 Cr. 1,00,000<br><br>
-                <strong>Example 2 (Paying Rent):</strong> You pay ₹5,000 Rent in Cash.<br>
-                - Rent Account (Nominal A/c) is an expense 👉 Dr. 5,000<br>
-                - Cash Account (Real A/c) goes out 👉 Cr. 5,000
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 11 to Day 15</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Pass 30 manual journal entries in a notebook (no computers yet). Ensure Debits equal Credits for every single entry.
+                heading: "Week 3 (Days 11-15): Trial Balance & Final Accounts",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 11-12: Creating the Trial Balance</strong><br>
+                    <em>Theory:</em> Summarizing ledger balances to check arithmetic accuracy.<br>
+                    <em>Practical:</em> Extract balances from Week 2's ledgers and prepare a matching Trial Balance.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 13-15: Trading, P&L, and Balance Sheet</strong><br>
+                    <em>Theory:</em> Direct vs Indirect expenses. Format of the Balance Sheet (Liabilities on Left, Assets on Right).<br>
+                    <em>Practical:</em> Convert the Trial Balance into a final Trading A/c, P&L A/c, and a perfectly tallied Balance Sheet.
                 </div>`,
-                shortcut: "Journal entries are recorded chronologically (day-by-day) in the primary books of accounts.",
-                imgSrc: "images/tpro-03-double-entry.jpg"
+                shortcut: "In Tally Prime, you only do the Journal Entry. Tally instantly builds the Ledgers, Trial Balance, and Final Accounts automatically!",
+                imgSrc: "images/tpro-03-final-accounts.jpg"
             },
             {
-                heading: "Ledger Posting, Trial Balance and Final Accounts",
-                text: `<strong>1. Ledger Posting:</strong> Transferring journal entries to individual account diaries. The 'Cash Ledger' will show all cash ins and outs, ending with a final balance.<br><br>
-                <strong>2. Trial Balance:</strong> A summary sheet listing the closing balances of all ledgers. If your accounting is accurate, the total of all Debit balances will exactly equal the total of all Credit balances.<br><br>
-                <strong>3. Final Accounts:</strong> Prepared at year-end. Includes:<br>
-                - <em>Trading A/c:</em> Shows Gross Profit from direct buying and selling.<br>
-                - <em>Profit & Loss A/c:</em> Subtracts indirect expenses (salary, rent) to show Net Profit.<br>
-                - <em>Balance Sheet:</em> A snapshot of Assets and Liabilities.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 16 to Day 20</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Take the 30 journal entries from last week, post them into manual T-shape Ledgers on paper, and extract a manual Trial Balance.
+                heading: "Week 4 (Days 16-20): Basics of Tally Prime 7.0",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 16-17: Installation & Interface Walkthrough</strong><br>
+                    <em>Theory:</em> Tally ERP 9 vs Tally Prime 7.0. Understanding Educational Mode. The new Top Menu Bar.<br>
+                    <em>Practical:</em> Install Tally Prime, open Educational Mode, and explore the Alt+K, Alt+Y, and Alt+Z menus.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 18-20: Gateway of Tally & Shortcuts</strong><br>
+                    <em>Theory:</em> Masters, Transactions, Utilities, and Reports. Deep dive into Alt+G (Go To) and F12 (Configure).<br>
+                    <em>Practical:</em> Navigate to 10 different reports using ONLY the keyboard and the Alt+G search bar. No mouse allowed.
                 </div>`,
-                shortcut: "In Tally Prime, you only do Voucher Entries. Tally instantly builds the Ledgers, Trial Balance, and Final Accounts automatically!",
-                imgSrc: "images/tpro-04-final-accounts.jpg"
-            }
-        ]
-    },
-
-    // ==========================================
-    // MODULE 2: BASICS OF TALLY PRIME 7.0 (Month 2)
-    // ==========================================
-    {
-        id: "chapter2",
-        title: "Module 2: Basics of Tally Prime (Month 2)",
-        topics: [
-            {
-                heading: "Overview of Tally ERP & Tally Prime",
-                text: `Tally ERP 9 was the older, blue-screen standard. Tally Prime 7.0 is the modern, color-optimized successor. Tally Prime introduces a much cleaner interface, the powerful 'Go To' search bar, and seamless multitasking. Under the hood, Prime 7.0 manages GST compliance, e-Invoicing, and audit trails automatically to meet modern government regulations.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 21 to Day 23</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Download the setup file from TallySolutions.com and install Tally Prime 7.0 in Educational Mode on the lab computers.
-                </div>`,
-                shortcut: "Tally Prime is designed to be fully operated using a keyboard. Using a mouse slows down a professional accountant.",
-                imgSrc: "images/tpro-05-overview.jpg"
+                shortcut: "Alt + G (Go To) is the magic search bar. Jump to any report without closing your current work.",
+                imgSrc: "images/tpro-04-interface.jpg"
             },
             {
-                heading: "Installation and Interface Walkthrough",
-                text: `Once installed, open the software. Click <strong>'Continue in Educational Mode'</strong>. <br><br>
-                <strong>The Top Menu Bar:</strong> This is a new feature in Prime. It contains universal commands: Company (Alt+K), Data (Alt+Y), Exchange (Alt+Z), Go To (Alt+G), Import (Alt+O), Export (Alt+E), Email (Alt+M), Print (Alt+P), and Help (F1). These top menus can be accessed from any screen inside the software.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 24 to Day 25</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Memorize the Top Menu. Open 5 different top menu dropdowns using only the Alt+Letter combinations on the keyboard.
-                </div>`,
-                shortcut: "Educational Mode works exactly like the paid version, but restricts date entry to the 1st, 2nd, and 31st of the month.",
-                imgSrc: "images/tpro-06-interface.jpg"
-            },
-            {
-                heading: "Creating, Altering, Deleting Company",
-                text: `Press <strong>Alt+K</strong> (Company Menu) and select <strong>Create</strong>. Enter the Company Name, Mailing Address, and select the State. <em>(Selecting the correct state is vital for accurate GST calculations)</em>. The Financial Year typically starts on 1st April.<br><br>
-                <strong>Altering:</strong> Press Alt+K > Alter to fix spelling mistakes.<br>
-                <strong>Deleting:</strong> Go to the Alter screen and press <strong>Alt+D</strong>. A warning will appear. Press 'Y' to permanently destroy the company and all its data.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 26 to Day 28</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Create 3 mock companies with different financial years. Alter the address of one, and permanently delete another.
+                heading: "Week 5 (Days 21-25): Company Creation & Management",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 21-23: Create, Alter, Delete Company</strong><br>
+                    <em>Theory:</em> Importance of State selection for GST. Financial Year vs Books Beginning From.<br>
+                    <em>Practical:</em> Create 5 dummy companies for different states. Alter 2 of them. Permanently delete 1 using Alt+D.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 24-25: F11 Company Features</strong><br>
+                    <em>Theory:</em> Toggling Accounting, Inventory, and Taxation settings.<br>
+                    <em>Practical:</em> Configure a company strictly for Services (Inventory Off), and another for Trading (Inventory On).
                 </div>`,
                 shortcut: "Alt + D is the universal 'Delete' command in Tally for companies, ledgers, and vouchers.",
-                imgSrc: "images/tpro-07-company.jpg"
-            },
-            {
-                heading: "Gateway of Tally & Navigation Shortcuts",
-                text: `The <strong>Gateway of Tally</strong> is your central steering wheel. It is divided into four main blocks:<br>
-                1. <strong>Masters:</strong> Create and Alter.<br>
-                2. <strong>Transactions:</strong> Vouchers and Day Book.<br>
-                3. <strong>Utilities:</strong> Banking.<br>
-                4. <strong>Reports:</strong> Balance Sheet, P&L A/c.<br><br>
-                <strong>Vital Shortcuts:</strong><br>
-                - <strong>Alt + G (Go To):</strong> The magic search bar. Jump to any report without closing your current work.<br>
-                - <strong>Ctrl + A:</strong> Instantly accept and save any screen without pressing 'Enter' 20 times.<br>
-                - <strong>F12 (Configure):</strong> Opens hidden settings on your current screen.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 29 to Day 35</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Practice multitasking. Open a Voucher, press Alt+G, search for 'Balance Sheet', view it, and press Escape to return to the voucher without losing data.
-                </div>`,
-                shortcut: "If you cannot find a specific option on a screen, press F12! It is likely hidden in the configuration menu.",
-                imgSrc: "images/tpro-08-gateway.jpg"
+                imgSrc: "images/tpro-05-company.jpg"
             }
         ]
     },
 
     // ==========================================
-    // MODULE 3: COMPANY CREATION & LEDGER MGMT (Month 2-3)
+    // MONTH 2: MASTERS, GROUPS & VOUCHERS
+    // Target: Create flawless ledger hierarchies and record all non-inventory financial routing.
     // ==========================================
     {
-        id: "chapter3",
-        title: "Module 3: Ledger Management & Balances",
+        id: "month2",
+        title: "Month 2: Ledgers & Voucher Routing (Days 26-50)",
         topics: [
             {
-                heading: "Company Configuration Options (F11)",
-                text: `As soon as you create and save a company, the F11 Features screen appears. Here you define the business operations.<br>
-                - <strong>Accounting:</strong> Set 'Maintain Accounts' to Yes.<br>
-                - <strong>Inventory:</strong> If it is a product-selling shop, set 'Maintain Inventory' to Yes, and 'Integrate Accounts with Inventory' to Yes.<br>
-                - <strong>Taxation:</strong> Enable GST, TDS, or TCS if applicable.<br>
-                - <strong>Payroll:</strong> Enable if you plan to manage employee salaries through Tally.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 36 to Day 38</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Open F11 and configure the features for a purely Service-based company (Inventory OFF) vs a Trading company (Inventory ON).
-                </div>`,
-                shortcut: "You can press F11 from the Gateway of Tally at any point in the future to turn these features on or off.",
-                imgSrc: "images/tpro-10-f11.jpg"
-            },
-            {
-                heading: "Understanding Group Hierarchy",
-                text: `Tally operates on a strict Group Hierarchy. There are 28 Pre-defined Groups (15 Primary, 13 Sub-groups). Placing a ledger in the wrong group will completely ruin the Balance Sheet.<br>
-                <strong>Key Groups:</strong><br>
-                - <em>Sundry Debtors:</em> Customers you sell to (Current Assets).<br>
-                - <em>Sundry Creditors:</em> Suppliers you buy from (Current Liabilities).<br>
-                - <em>Fixed Assets:</em> Computers, Land, Furniture owned by the business.<br>
-                - <em>Indirect Expenses:</em> Office Rent, Staff Salary, Electricity Bill.<br>
-                - <em>Duties & Taxes:</em> All GST, TDS, and Tax ledgers.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 39 to Day 42</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Map 40 different business ledgers to their correct Tally Groups on paper, then navigate to Chart of Accounts > Groups to verify the tree structure.
+                heading: "Week 6 (Days 26-30): Group Hierarchy",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 26-28: Primary and Sub-Groups</strong><br>
+                    <em>Theory:</em> Detailed study of the 28 pre-defined Tally groups. Sundry Debtors (Assets) vs Sundry Creditors (Liabilities).<br>
+                    <em>Practical:</em> Map a real-world list of 50 business accounts to their exact correct Tally Group on paper.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 29-30: Managing Account Groups</strong><br>
+                    <em>Theory:</em> Creating Custom Groups (e.g., 'North India Debtors' under Sundry Debtors).<br>
+                    <em>Practical:</em> Create 5 custom sub-groups in Tally and view the updated Chart of Accounts tree.
                 </div>`,
                 shortcut: "Gateway of Tally > Chart of Accounts > Groups (To view the entire tree structure).",
-                imgSrc: "images/tpro-11-groups.jpg"
+                imgSrc: "images/tpro-06-groups.jpg"
             },
             {
-                heading: "Creating Ledgers (Cash, Bank, Sales, Purchase)",
-                text: `Go to <strong>Gateway of Tally > Create > Ledger</strong>.<br>
-                - Type 'Sales A/c' and put it under 'Sales Accounts'.<br>
-                - Type 'Purchase A/c' and put it under 'Purchase Accounts'.<br>
-                - Type 'SBI Bank' and put it under 'Bank Accounts'. Provide the A/c number and IFSC code for e-Banking.<br>
-                - Create a Customer Name and put them under 'Sundry Debtors'. Provide their Mailing Address and State (crucial for GST).
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 43 to Day 46</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Create 25 ledgers covering Capital, Banks, Expenses, Debtors, and Creditors using the 'Multi Masters' (Alt+H) rapid creation tool.
+                heading: "Week 7 (Days 31-35): Ledger Creation & Opening Balances",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 31-33: Creating Essential Ledgers</strong><br>
+                    <em>Theory:</em> Bank, Cash, Purchase, Sales, Expenses, and Party ledgers. Contact details and PAN configuration.<br>
+                    <em>Practical:</em> Create 30 business ledgers accurately in Tally without using the mouse.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 34-35: Assigning Opening Balances</strong><br>
+                    <em>Theory:</em> Migrating old manual data into Tally. Dr (Asset/Expense) vs Cr (Liability/Income) balances.<br>
+                    <em>Practical:</em> Input a given traditional Balance Sheet into Tally via Ledger Opening Balances until the 'Difference' is zero.
                 </div>`,
-                shortcut: "Tally automatically provides two ledgers for free: 'Cash' and 'Profit & Loss A/c'. Do not try to create them again.",
-                imgSrc: "images/tpro-12-ledgers.jpg"
+                shortcut: "Use Alt+H (Multi Masters) > Multi Alter from Chart of Accounts to enter opening balances rapidly.",
+                imgSrc: "images/tpro-07-opening-bal.jpg"
             },
             {
-                heading: "Opening Balances & Bill-wise Details",
-                text: `If you are switching an existing business to Tally, you must enter their current financial position as 'Opening Balances'.<br><br>
-                Go to <strong>Alter > Ledger</strong>. Select the 'Cash' ledger, and at the bottom, type the exact cash available in the shop today. Ensure Tally marks Assets as 'Dr' (Debit) and Liabilities/Capital as 'Cr' (Credit). A mismatch here creates a 'Difference in Opening Balances' error.<br><br>
-                <strong>Bill-wise Details:</strong> When entering opening balances for Debtors/Creditors, Tally will ask you to break down the total pending amount bill-by-bill (e.g., Bill 01 for ₹5000, Bill 02 for ₹3000) so you can track exact payments later.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 47 to Day 50</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Enter opening balances for 10 ledgers. Break down a Creditor's ₹10,000 opening balance into 3 separate previous-year pending bills.
+                heading: "Week 8 (Days 36-40): Contra & Journal Vouchers",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 36-37: Contra Voucher (F4)</strong><br>
+                    <em>Theory:</em> Internal cash/bank movement. Depositing, Withdrawing, and Bank-to-Bank transfers.<br>
+                    <em>Practical:</em> Record 15 Contra entries. Check the Cash Book to verify balances.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 38-40: Journal Voucher (F7)</strong><br>
+                    <em>Theory:</em> Non-cash adjustments. Buying Fixed Assets on credit, passing Depreciation, and rectifying errors.<br>
+                    <em>Practical:</em> Pass 10 credit asset purchases and 5 depreciation adjustment entries at year-end.
                 </div>`,
-                shortcut: "Enable 'Maintain balances bill-by-bill' in F11 to unlock outstanding tracking.",
-                imgSrc: "images/tpro-13-opening-bal.jpg"
+                shortcut: "F4 = Internal Cash/Bank movement ONLY. F7 = Non-Cash Adjustments.",
+                imgSrc: "images/tpro-08-contra-journal.jpg"
+            },
+            {
+                heading: "Week 9 (Days 41-45): Payment & Receipt Vouchers",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 41-42: Receipt Voucher (F6)</strong><br>
+                    <em>Theory:</em> Recording incoming money. Capital introduction, receiving debt from customers.<br>
+                    <em>Practical:</em> Process 20 receipt entries via Cash and Cheque.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 43-45: Payment Voucher (F5)</strong><br>
+                    <em>Theory:</em> Recording outgoing money. Paying rent, salary, suppliers, and buying cash assets.<br>
+                    <em>Practical:</em> Process 25 payment entries. Generate a Cash Flow report to analyze outgoings.
+                </div>`,
+                shortcut: "F5 = Money Out | F6 = Money In. Use F12 to switch between Single Entry and Double Entry modes.",
+                imgSrc: "images/tpro-09-payment-receipt.jpg"
+            },
+            {
+                heading: "Week 10 (Days 46-50): Day Book & Error Rectification",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 46-48: Day Book Overview</strong><br>
+                    <em>Theory:</em> Navigating the daily log. Altering, Deleting (Alt+D), and Cancelling (Alt+X) vouchers.<br>
+                    <em>Practical:</em> Open a specific date, locate 3 deliberately wrong entries, cancel one, and alter two.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 49-50: Ledger Review & Month 2 Assessment</strong><br>
+                    <em>Theory:</em> Reading Ledger Vouchers (Gateway > Display > Account Books > Ledger).<br>
+                    <em>Practical:</em> Complete the Month 2 Assessment: 50 mixed non-inventory transactions to be completed in 45 minutes.
+                </div>`,
+                shortcut: "Press Alt + F2 in the Day Book to change the period and view the entire year's transactions.",
+                imgSrc: "images/tpro-10-daybook.jpg"
             }
         ]
     },
 
     // ==========================================
-    // MODULE 4: VOUCHER ENTRY IN TALLY (Month 3)
+    // MONTH 3: INVENTORY MANAGEMENT & GODOWNS
+    // Target: Build complete inventory architectures, compound units, and godown tracking.
     // ==========================================
     {
-        id: "chapter4",
-        title: "Module 4: Voucher Entries & Tracking (Month 3)",
+        id: "month3",
+        title: "Month 3: Inventory & Godown Tracking (Days 51-75)",
         topics: [
             {
-                heading: "Payment (F5) and Receipt (F6) Vouchers",
-                text: `<strong>Payment Voucher (F5):</strong> Used strictly when money is going OUT of the business. You use it to pay Suppliers (Creditors), pay office rent, pay salaries, or purchase fixed assets for cash.<br><br>
-                <strong>Receipt Voucher (F6):</strong> Used strictly when money is coming INTO the business. You use it when the owner brings in Capital, when you receive a loan, or when a Customer (Debtor) pays their outstanding bill.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 51 to Day 55</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Record 15 Capital/Loan receipts, and 20 daily expense payments via Cash and Bank.
+                heading: "Week 11 (Days 51-55): Units of Measure",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 51-53: Simple Units & UQC</strong><br>
+                    <em>Theory:</em> Creating KGS, NOS, LTR. Importance of Govt UQC mapping for GST.<br>
+                    <em>Practical:</em> Create 10 simple units mapped accurately to standard UQC codes.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 54-55: Compound Units</strong><br>
+                    <em>Theory:</em> Conversion logic (e.g., 1 Box = 10 Pcs, 1 Ton = 1000 Kgs).<br>
+                    <em>Practical:</em> Configure 5 compound units to allow wholesale and retail billing from the same stock item.
                 </div>`,
-                shortcut: "F5 = Money Out | F6 = Money In.",
-                imgSrc: "images/tpro-15-payment-receipt.jpg"
+                shortcut: "Gateway > Create > Unit. Press Backspace to change Simple to Compound.",
+                imgSrc: "images/tpro-11-units.jpg"
             },
             {
-                heading: "Contra (F4) and Journal (F7)",
-                text: `<strong>Contra (F4):</strong> Used ONLY for internal money transfers. Cash deposited to Bank, Cash withdrawn from Bank, or Bank-to-Bank transfers. No third party is involved.<br>
-                <strong>Journal (F7):</strong> The adjustment voucher. Used for non-cash transactions like buying machinery on credit, or recording depreciation.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 56 to Day 60</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Record 10 ATM withdrawals/deposits, and 5 depreciation/adjustment entries at year-end.
+                heading: "Week 12 (Days 56-60): Stock Groups, Categories & Items",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 56-58: Inventory Hierarchy</strong><br>
+                    <em>Theory:</em> Group (Electronics) vs Category (Sony/LG). Structuring for easy reporting.<br>
+                    <em>Practical:</em> Design and create an inventory tree for a supermarket with 4 Groups, 10 Categories, and 25 Stock Items.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 59-60: Opening Stock Entry</strong><br>
+                    <em>Theory:</em> Feeding existing physical stock quantities and rates into Tally.<br>
+                    <em>Practical:</em> Input ₹5 Lakhs worth of opening stock across 20 items. Verify the Trading A/c reflection.
                 </div>`,
-                shortcut: "F4 = Internal Cash/Bank movement ONLY.",
-                imgSrc: "images/tpro-14-contra.jpg"
+                shortcut: "Press F12 while creating a Stock Item to enable Descriptions and Alternative Units.",
+                imgSrc: "images/tpro-12-stock-items.jpg"
             },
             {
-                heading: "Sales (F8) & Purchase (F9) Vouchers",
-                text: `These vouchers are exclusively for trading stock/inventory.<br>
-                <strong>Purchase (F9):</strong> Used when buying goods from a supplier to resell. Enter the Supplier Invoice No, select the Party A/c, select Purchase A/c, and list the items and quantities.<br>
-                <strong>Sales (F8):</strong> Used when selling goods to a customer. Select the Party A/c, Sales A/c, and list the items. Tally will automatically calculate the subtotal.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 61 to Day 65</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Enter 20 standard purchase invoices and 25 sales invoices using 'Item Invoice' mode.
+                heading: "Week 13 (Days 61-65): Godown Creation and Tracking",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 61-63: Multiple Godowns Setup</strong><br>
+                    <em>Theory:</em> F11 Godown activation. Main Location vs Branch Warehouses.<br>
+                    <em>Practical:</em> Create 3 Godowns. Transfer opening stock physically into distinct godowns.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 64-65: Stock Journal (Alt+F7)</strong><br>
+                    <em>Theory:</em> Moving inventory internally between Godown A and Godown B without selling it.<br>
+                    <em>Practical:</em> Record 10 internal stock transfer vouchers. Print the Godown Summary report.
                 </div>`,
-                shortcut: "Press Ctrl+H (Change Mode) in F8/F9 to switch between 'Item Invoice' (for inventory) and 'As Voucher' (for manual Dr/Cr entries).",
-                imgSrc: "images/tpro-17-sales-purchase.jpg"
+                shortcut: "Alt + F7 = Stock Journal. Used for internal transfers and manufacturing entries.",
+                imgSrc: "images/tpro-13-godowns.jpg"
             },
             {
-                heading: "Credit Note (Alt+F6) & Debit Note (Alt+F5)",
-                text: `These are used for Returns and Price Adjustments.<br>
-                <strong>Debit Note (Alt+F5):</strong> Purchase Return. You bought 10 laptops, but 2 are broken. You pass a Debit Note to return them to the supplier and reduce your liability.<br>
-                <strong>Credit Note (Alt+F6):</strong> Sales Return. A customer returns damaged goods back to you. You pass a Credit Note to receive the stock back and reduce the customer's outstanding balance.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 66 to Day 70</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Process 5 purchase returns and 5 sales returns, tracking them against their original invoice numbers.
+                heading: "Week 14 (Days 66-70): Sales & Purchase Vouchers (Inventory)",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 66-68: Purchase Voucher (F9)</strong><br>
+                    <em>Theory:</em> Item Invoice mode. Supplier invoice tracking. Selecting Godowns during purchase.<br>
+                    <em>Practical:</em> Record 15 heavy purchase invoices mapping items directly to specific godowns.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 69-70: Sales Voucher (F8)</strong><br>
+                    <em>Theory:</em> Billing customers. Warning for negative stock. Selling from compound units.<br>
+                    <em>Practical:</em> Generate 20 sales bills. Include sales of fractions (e.g., selling 1 Box and 3 Pcs).
                 </div>`,
-                shortcut: "Press F10 (Other Vouchers) if you forget the shortcuts for Debit/Credit Notes.",
-                imgSrc: "images/tpro-18-notes.jpg"
+                shortcut: "Press Ctrl+H (Change Mode) in F8/F9 to switch between 'Item Invoice' and 'As Voucher' mode.",
+                imgSrc: "images/tpro-14-sales-purchase.jpg"
             },
             {
-                heading: "Cost Centres & Day Book Overview",
-                text: `<strong>Cost Centres:</strong> Used to track department-wise expenses. If you pay ₹10,000 Rent, you can use Cost Centres to allocate ₹6,000 to the 'Sales Dept' and ₹4,000 to 'Admin Dept' inside the same voucher. (Enable via F11).<br><br>
-                <strong>Day Book:</strong> The Day Book (Gateway > Day Book) acts as your daily ledger log. It lists every single voucher entered on the current date. Press Alt+F2 to change dates.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 71 to Day 75</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Create Cost Centres for 3 departments. Allocate a bulk Salary payment across the 3 departments. Use the Day Book to alter and delete old entries.
+                heading: "Week 15 (Days 71-75): Stock Reports & Month 3 Review",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 71-73: Stock Summary & Reorder Levels</strong><br>
+                    <em>Theory:</em> Alt+F5 detailed summary. Setting minimum order quantities to prevent stock-outs.<br>
+                    <em>Practical:</em> Set re-order levels for 10 high-selling items. Generate the Reorder Status report.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 74-75: Month 3 Assessment</strong><br>
+                    <em>Theory:</em> Full inventory cycle review.<br>
+                    <em>Practical:</em> Comprehensive Exam: Create hierarchy, add opening stock, purchase, sell, transfer godowns, and verify closing stock value.
                 </div>`,
-                shortcut: "Press Alt+X to 'Cancel' a voucher in the Day Book. This keeps the voucher number intact but voids the amount for audit purposes.",
-                imgSrc: "images/tpro-19-daybook.jpg"
+                shortcut: "Press F12 in Stock Summary to show Inwards, Outwards, and Closing Balance side-by-side.",
+                imgSrc: "images/tpro-15-stock-summary.jpg"
             }
         ]
     },
 
     // ==========================================
-    // MODULE 5: INVENTORY MANAGEMENT (Month 4)
+    // MONTH 4: TAXATION (GST & E-WAY BILLS)
+    // Target: Perfect GST setup, tax invoicing, and automatic GSTR JSON generation.
     // ==========================================
     {
-        id: "chapter5",
-        title: "Module 5: Inventory & Order Processing (Month 4)",
+        id: "month4",
+        title: "Month 4: GST & Tax Reporting (Days 76-100)",
         topics: [
             {
-                heading: "Units of Measure (Simple & Compound)",
-                text: `Tally must know how you count your goods. Go to <strong>Create > Unit</strong>.<br>
-                <strong>Simple Units:</strong> Create a Symbol (PCS) and Formal Name (Pieces). You MUST select the official UQC (Unique Quantity Code) as 'NOS-NUMBERS' for GST filing.<br>
-                <strong>Compound Units:</strong> Press Backspace on the Unit Creation screen and change the Type to 'Compound'. You can define logic like "Box of 10 PCS". This allows Tally to sell 1 Box or just 2 individual pieces from the same stock.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 76 to Day 80</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Create Simple units (NOS, DOZ) and Compound units ("Carton of 24 NOS").
-                </div>`,
-                shortcut: "Always assign the correct UQC (Unique Quantity Code) for GST reporting.",
-                imgSrc: "images/tpro-20-units.jpg"
-            },
-            {
-                heading: "Stock Groups, Categories & Items",
-                text: `To keep a clean godown, organize your stock hierarchically.<br>
-                - <strong>Stock Group:</strong> The main family (e.g., 'Mobile Phones').<br>
-                - <strong>Stock Category:</strong> An independent classification. Create categories like 'Samsung' or 'Dell'.<br>
-                - <strong>Stock Item:</strong> The actual product. Go to Create > Stock Item. Name it 'Samsung Galaxy S23', put it under Mobile Phones group, Samsung category, and PCS unit.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 81 to Day 85</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Build an entire electronics inventory tree with 5 Groups, 5 Categories, and 30 Stock Items.
-                </div>`,
-                shortcut: "Press F12 while creating a Stock Item to enable descriptions, part numbers, or alternative units.",
-                imgSrc: "images/tpro-21-stock-items.jpg"
-            },
-            {
-                heading: "Godown Creation and Transfers",
-                text: `If you store goods in multiple physical locations, you need Godowns. Press <strong>F11</strong> and ensure 'Maintain Multiple Godowns' is enabled.<br>
-                Go to <strong>Create > Godown</strong>. Create 'Main Shop', 'Warehouse A', etc. Use a <strong>Stock Journal (Alt+F7)</strong> to transfer goods internally from the Warehouse to the Shop Display.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 86 to Day 90</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Create 3 Godowns. Pass 5 Stock Journal entries transferring 50 items from 'Warehouse' to 'Shop Display'.
-                </div>`,
-                shortcut: "Alt+F7 (Stock Journal) is used for internal movement of goods without buying or selling.",
-                imgSrc: "images/tpro-22-godowns.jpg"
-            },
-            {
-                heading: "Order Processing (PO / SO Lifecycle)",
-                text: `Professional businesses don't just buy and sell blindly; they use an Order Lifecycle. Enable Order Processing in F11.<br>
-                <strong>The Purchase Cycle:</strong> Purchase Order (Ctrl+F9) ➔ Receipt Note (Tracking Delivery) ➔ Rejection Out (If damaged) ➔ Final Purchase Bill (F9).<br>
-                <strong>The Sales Cycle:</strong> Sales Order (Ctrl+F8) ➔ Delivery Note (Sending goods) ➔ Rejection In ➔ Final Sales Bill (F8).
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 91 to Day 95</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Raise 5 Purchase Orders. Receive goods against them via Receipt Note, reject 2 items, and finalize the Purchase Bill.
-                </div>`,
-                shortcut: "Order Processing links the delivery challans directly to the final invoices automatically.",
-                imgSrc: "images/tpro-23-opening-stock.jpg"
-            },
-            {
-                heading: "Manufacturing (BOM) & Inventory Reports",
-                text: `<strong>Bill of Materials (BOM):</strong> Used in manufacturing. You configure an assembled item (e.g., 'Desktop PC') and attach raw materials to it (1 Cabinet, 1 Motherboard, 1 RAM). Using a Manufacturing Journal, Tally consumes the raw materials automatically to produce 1 finished PC.<br>
-                <strong>Reports:</strong> Go to Gateway > Stock Summary. Press Alt+F5 for a detailed view. Check 'Reorder Status' to see which items are running out of stock.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 96 to Day 105</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Assemble 10 "Desktop PCs" from raw materials using BOM. Set Reorder Levels for all raw materials so Tally warns you when stock is low.
-                </div>`,
-                shortcut: "Press F12 in Stock Summary to show Opening Balance, Goods Inwards, Goods Outwards, and Closing Balance side-by-side.",
-                imgSrc: "images/tpro-24-stock-summary.jpg"
-            }
-        ]
-    },
-
-    // ==========================================
-    // MODULE 6: TAXATION (GST, TDS, TCS) (Month 5)
-    // ==========================================
-    {
-        id: "chapter6",
-        title: "Module 6: Taxation - GST, TDS, TCS (Month 5)",
-        topics: [
-            {
-                heading: "Enabling GST & Creating Tax Ledgers",
-                text: `Press <strong>F11 (Features)</strong>. Set 'Enable GST' to Yes. Select your State, Registration Type (Regular/Composition), and type the 15-digit GSTIN. Configure e-Way bill limits if needed.<br><br>
-                <strong>Tax Ledgers:</strong> Group them under 'Duties & Taxes'. Type of Duty: GST.<br>
-                - <strong>CGST</strong> (Central) & <strong>SGST</strong> (State) are used together for sales inside your state.<br>
-                - <strong>IGST</strong> (Integrated) is used alone for sales outside your state.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 106 to Day 110</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Configure GSTIN details. Create the 3 main GST ledgers without hard-coding tax rates, allowing Tally to pull rates dynamically from items.
+                heading: "Week 16 (Days 76-80): GST Basics & F11 Configuration",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 76-78: Understanding GST & HSN Codes</strong><br>
+                    <em>Theory:</em> SGST, CGST, IGST rules. Composition vs Regular dealer. What are HSN/SAC codes?<br>
+                    <em>Practical:</em> Enable GST in F11. Input accurate GSTIN and set company-level tax defaults.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 79-80: Item-Level vs Group-Level GST</strong><br>
+                    <em>Theory:</em> Where to define tax rates (Company vs Item level) for a multi-tax rate business.<br>
+                    <em>Practical:</em> Configure 10 items at 12% GST and 10 items at 18% GST using HSN master configurations.
                 </div>`,
                 shortcut: "GSTIN structure: First 2 digits are State Code, next 10 are PAN, last 3 are entity codes.",
-                imgSrc: "images/tpro-25-enable-tax.jpg"
+                imgSrc: "images/tpro-16-gst-setup.jpg"
             },
             {
-                heading: "GST-enabled Sales & Purchase Entries",
-                text: `While creating a Stock Item, set 'GST Applicable' to Yes and enter the HSN code and Tax Rate (e.g., 18%). Now, when you pass a Sales Voucher (F8), select the item, and at the bottom, select CGST and SGST. Tally will automatically calculate exactly 9% for CGST and 9% for SGST based on the item's rate.<br>
-                <strong>Pro Tip:</strong> Press <strong>Ctrl+O > GST Tax Analysis</strong> to see a detailed breakdown of exactly how Tally calculated the tax amount.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 111 to Day 115</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Pass 20 Local GST invoices (using CGST/SGST) and 10 Interstate invoices (using IGST). Use Ctrl+O to verify tax analysis.
+                heading: "Week 17 (Days 81-85): Tax Ledgers & Intra/Inter-State Purchases",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 81-82: Creating Duties & Taxes Ledgers</strong><br>
+                    <em>Theory:</em> Setting Type of Duty as 'GST'. Why we don't hardcode percentages in the ledger name.<br>
+                    <em>Practical:</em> Create Central Tax, State Tax, and Integrated Tax ledgers perfectly.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 83-85: GST Purchase Entries (F9)</strong><br>
+                    <em>Theory:</em> ITC (Input Tax Credit). Buying from Local vs Outside State suppliers.<br>
+                    <em>Practical:</em> Record 15 purchases. Use Ctrl+O (Tax Analysis) to prove Tally calculated exact ITC automatically.
                 </div>`,
-                shortcut: "If the tax does not calculate automatically, check the Customer's State or the Item's GST configuration.",
-                imgSrc: "images/tpro-27-gst-entries.jpg"
+                shortcut: "If the tax fails to calculate, check the Supplier's State and the Item's Taxability status.",
+                imgSrc: "images/tpro-17-tax-ledgers.jpg"
             },
             {
-                heading: "GSTR-1, GSTR-3B Reporting in Tally",
-                text: `Tally automatically drafts your government tax returns based on your voucher entries.<br>
-                - <strong>GSTR-1 (Outward Supplies):</strong> Press Alt+G and type 'GSTR-1'. It shows all B2B and B2C sales invoices.<br>
-                - <strong>GSTR-3B (Summary Return):</strong> Press Alt+G and type 'GSTR-3B'. It shows your total tax liability against your Input Tax Credit (ITC).<br>
-                Review the 'Uncertain Transactions' section to fix errors, then press <strong>Alt+E</strong> to export the Return as a JSON file for the GST Portal.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 116 to Day 120</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Reconcile GSTR-1 and GSTR-3B in Tally. Fix 3 intentionally created mismatch errors (e.g., missing HSN codes) in the Uncertain Transactions section.
+                heading: "Week 18 (Days 86-90): GST Sales, E-Way Bills & Invoicing",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 86-88: B2B vs B2C Sales (F8)</strong><br>
+                    <em>Theory:</em> Business-to-Business (Needs GSTIN) vs Business-to-Consumer. Generating Tax Invoices.<br>
+                    <em>Practical:</em> Generate 20 sales bills. Format the Print Preview (Alt+P > Current) to show GST columns.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 89-90: E-Way Bill Integration</strong><br>
+                    <em>Theory:</em> Threshold limits (e.g., ₹50,000). Transporter details and distance.<br>
+                    <em>Practical:</em> Pass a high-value invoice, fill the mandatory e-Way bill pop-up, and review the JSON export module.
                 </div>`,
-                shortcut: "Alt + G > type 'GSTR-1' or 'GSTR-3B'.",
-                imgSrc: "images/tpro-28-gstr-returns.jpg"
+                shortcut: "Press Alt + P > Current > 'I' (Preview) to see the printable, legally compliant Tax Invoice.",
+                imgSrc: "images/tpro-18-gst-sales.jpg"
             },
             {
-                heading: "TDS Deduction & TCS Entries",
-                text: `<strong>TDS (Tax Deducted at Source):</strong> If you receive an Audit bill for ₹50,000, you must deduct 10% TDS. Pass a Journal (F7) to record the expense, credit the CA for ₹45k, and credit the 'TDS' ledger for ₹5k. Then, pay the CA via Bank.<br><br>
-                <strong>TCS (Tax Collected at Source):</strong> Collected by the seller from the buyer on specific goods like Scrap or Timber. Configure the Sales ledger for TCS. In the Sales Voucher (F8), select the Items, add GST, and then add a 'TCS' ledger at the very bottom.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 121 to Day 130</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Deduct TDS on Rent and Professional Fees via Journal, then process Stat Payment. Collect TCS on Scrap Sales and remit it to the Govt.
+                heading: "Week 19 (Days 91-95): Credit/Debit Notes with GST",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 91-93: Debit Note (Alt+F5) with Tax Reversal</strong><br>
+                    <em>Theory:</em> Returning goods to a supplier and adjusting the ITC claim.<br>
+                    <em>Practical:</em> Return defective inventory from Week 17 purchases and apply the exact CGST/SGST reversal.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 94-95: Credit Note (Alt+F6)</strong><br>
+                    <em>Theory:</em> Accepting customer returns and issuing tax credits.<br>
+                    <em>Practical:</em> Record 5 sales returns. Verify the reduction in Output Tax Liability in the Balance Sheet.
                 </div>`,
-                shortcut: "TDS is almost always deducted via a Journal Entry before the actual payment is made.",
-                imgSrc: "images/tpro-29-tds-entries.jpg"
+                shortcut: "Original Invoice Numbers are legally mandatory when passing GST Credit/Debit notes.",
+                imgSrc: "images/tpro-19-gst-notes.jpg"
+            },
+            {
+                heading: "Week 20 (Days 96-100): GSTR Reporting & JSON Export",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 96-98: GSTR-1 & GSTR-3B Analysis</strong><br>
+                    <em>Theory:</em> Understanding Outward Supplies (GSTR-1) and Summary Return (GSTR-3B).<br>
+                    <em>Practical:</em> Open GSTR reports. Identify and resolve 10 deliberately created 'Uncertain Transactions' (Errors).
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 99-100: JSON Export & Month 4 Exam</strong><br>
+                    <em>Theory:</em> The Govt Portal uploading process.<br>
+                    <em>Practical:</em> Press Alt+E to export GSTR-1 as JSON. Complete Month 4 Exam: Full Tax cycle from F11 to JSON.
+                </div>`,
+                shortcut: "Alt + G > type 'GSTR-1' to instantly view your outward supplies report.",
+                imgSrc: "images/tpro-20-gstr.jpg"
             }
         ]
     },
 
     // ==========================================
-    // MODULE 7: PAYROLL & EMPLOYEE RECORDS (Month 6)
+    // MONTH 5: ADVANCED TAX (TDS/TCS) & BANKING
+    // Target: Deduct TDS automatically, collect TCS, and master Bank Reconciliation.
     // ==========================================
     {
-        id: "chapter7",
-        title: "Module 7: Payroll Management (Month 6)",
+        id: "month5",
+        title: "Month 5: TDS, TCS & BRS (Days 101-125)",
         topics: [
             {
-                heading: "Enabling Payroll & Employee Masters",
-                text: `Press <strong>F11 > Maintain Payroll (Yes)</strong>. To calculate Statutory deductions like PF and ESI, set 'Enable Payroll Statutory' to Yes and enter your company's PF/ESI codes.<br>
-                <strong>Masters:</strong> Go to Create > Show More. Create <strong>Employee Groups</strong> (e.g., 'Marketing'). Then, go to <strong>Employee</strong> creation. Enter their Name, Joining Date, Group, PAN, Aadhaar details, and Bank Account numbers for salary transfers.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 131 to Day 133</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Create 2 Employee Groups and 5 Employees with full KYC details (PAN, Aadhaar numbers, and Bank data).
+                heading: "Week 21 (Days 101-105): TDS Fundamentals & Setup",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 101-103: Enable TDS & TAN Details</strong><br>
+                    <em>Theory:</em> What is Tax Deducted at Source? TAN requirements. Deductee types.<br>
+                    <em>Practical:</em> Enable TDS in F11. Create a Company Deductor profile with a valid TAN.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 104-105: Nature of Payment Masters</strong><br>
+                    <em>Theory:</em> Section 194J (Professional Fees), 194C (Contracts), and threshold limits.<br>
+                    <em>Practical:</em> Create TDS ledgers and assign specific deduction percentage rules (e.g., 10% above ₹30,000).
                 </div>`,
-                shortcut: "Proper employee grouping allows you to process salaries for whole departments at once.",
-                imgSrc: "images/tpro-31-payroll-enable.jpg"
+                shortcut: "Gateway > Create > TDS Nature of Payment.",
+                imgSrc: "images/tpro-21-tds-setup.jpg"
             },
             {
-                heading: "Attendance Types & Pay Heads",
-                text: `Go to <strong>Create > Attendance/Production Type</strong>. Create 'Present' (Attendance/Leave with Pay) and 'Absent' (Leave without Pay).<br><br>
-                <strong>Pay Heads:</strong> A Pay Head is a component of the salary. Go to Create > Pay Head.<br>
-                - <em>Basic Pay & HRA:</em> Type 'Earnings for Employees', Calculation 'On Attendance' (Present).<br>
-                - <em>PF Deduction:</em> Type 'Employees Statutory Deduction', Calculation 'As Computed Value' (12% of Basic Pay).<br>
-                Next, go to <strong>Define Salary Details</strong> to map these heads to the employee.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 134 to Day 136</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Build Basic, HRA, DA, and PF deduction structures, and link them to the 5 employees.
-                </div>`,
-                shortcut: "Pay Heads define the logic. Salary Details attach that logic to the specific person.",
-                imgSrc: "images/tpro-33-pay-heads.jpg"
-            },
-            {
-                heading: "Processing Payroll & Payslip Generation",
-                text: `<strong>Step 1:</strong> Go to Vouchers > F10 > Attendance. Select the employee, choose 'Present', and enter 28 Days.<br>
-                <strong>Step 2:</strong> Go to Vouchers > F10 > Payroll. Press <strong>Ctrl+F (Autofill)</strong>. Select 'Salary', choose the date range, and select the Employee Group. Tally will read the 28 days of attendance, calculate the Basic Pay, deduct the PF, and generate the exact payable amount instantly!<br>
-                <strong>Step 3:</strong> Go to Display More Reports > Payroll Reports > Payslip to print the professional salary slip.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 137 to Day 140</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Mark 30-day attendance for the 5 employees, run Payroll Autofill, and export their Payslips as PDFs.
-                </div>`,
-                shortcut: "Ctrl + F (Payroll Autofill) is the most powerful button in the payroll system.",
-                imgSrc: "images/tpro-34-payroll-process.jpg"
-            }
-        ]
-    },
-
-    // ==========================================
-    // MODULE 8: BANKING & SECURITY (Month 6)
-    // ==========================================
-    {
-        id: "chapter8",
-        title: "Module 8: Banking & Security (Month 6)",
-        topics: [
-            {
-                heading: "Bank Reconciliation Statement (BRS)",
-                text: `Your Tally bank balance rarely matches your real Passbook due to uncleared cheques. To fix this, go to <strong>Banking > Bank Reconciliation</strong>. Select your Bank. Look at your real bank statement, and type the actual 'Bank Date' next to the entries that have cleared. The 'Balance as per Bank' at the bottom will automatically update to match your real Passbook exactly!
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 141 to Day 142</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Clear 15 bank entries using a mock SBI passbook statement provided by the instructor.
-                </div>`,
-                shortcut: "Alt + R (From the Bank ledger screen to open Reconciliation).",
-                imgSrc: "images/tpro-35-brs.jpg"
-            },
-            {
-                heading: "Cheque Printing & Deposit Slips",
-                text: `Tally can print details directly onto blank physical cheques. Alter your Bank Ledger, enable 'Enable Cheque Printing', select your exact bank (like HDFC) from Tally's library, and load a blank cheque into your printer.<br>
-                <strong>Deposit Slips:</strong> Go to Banking > Deposit Slip. Tally generates a single, professional deposit slip listing all cheque numbers, dates, and amounts received today to take to the bank.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 143 to Day 144</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Configure HDFC cheque dimensions, preview a printed cheque, and generate a multi-cheque Deposit Slip.
-                </div>`,
-                shortcut: "Always use 'Print Preview' to check alignment before wasting a real cheque.",
-                imgSrc: "images/tpro-36-cheque-print.jpg"
-            },
-            {
-                heading: "Data Security, Backup & Restore",
-                text: `Financial data is highly confidential. Go to Alt+K (Company) > Security. Set 'Control User Access' to Yes. Create an Administrator password to lock the company.<br>
-                <strong>Backup:</strong> Go to Alt+Y (Data menu) > Backup. Select your Company and the Destination (like a USB Pendrive). Tally creates a safe (.tbk) backup file.<br>
-                <strong>Restore:</strong> Go to Alt+Y > Restore to perfectly rebuild your business file on a new computer.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 145</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Setup an Admin password, create a Data Backup to the D:/ drive, and successfully Restore it into a new folder.
-                </div>`,
-                shortcut: "Warning: If you forget the Admin password, your data is locked forever!",
-                imgSrc: "images/tpro-38-ebanking.jpg"
-            }
-        ]
-    },
-
-    // ==========================================
-    // MODULE 9: REAL-WORLD CAPSTONE PROJECTS (Month 6)
-    // ==========================================
-    {
-        id: "chapter9",
-        title: "Module 9: Capstone Projects (Month 6 Final)",
-        topics: [
-            {
-                heading: "Project 1: The Trading Company Setup",
-                text: `<strong>Objective:</strong> Run a full accounting cycle for a hardware shop.<br>
-                1. Create 'Tech World Traders'. Enable GST (18%).<br>
-                2. Pass Receipt (F6): Owner brings ₹10,00,000 Capital into HDFC Bank.<br>
-                3. Create Godowns: 'Shop' and 'Warehouse'.<br>
-                4. Pass Purchase (F9): Buy 100 Dell Laptops @ ₹30,000 each (plus CGST/SGST) from 'Mega Distributors'. Store 20 in Shop, 80 in Warehouse.<br>
-                5. Pass Sales (F8): Sell 5 Laptops @ ₹45,000 each (plus CGST/SGST) to 'Raj IT Solutions'.<br>
-                <strong>Check:</strong> View the P&L to verify Gross Profit. View GSTR-1 to ensure the sale is recorded under B2B invoices.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 146 to Day 147</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Complete Project 1. Export the final Balance Sheet as a PDF and submit it to the instructor.
-                </div>`,
-                shortcut: "Save your data backup (Alt+Y) in your student folder after completing the project.",
-                imgSrc: "images/tpro-39-project1.jpg"
-            },
-            {
-                heading: "Project 2: The Service & Taxation Challenge",
-                text: `<strong>Objective:</strong> Handle complex TDS deduction and service payments.<br>
-                1. Enable TDS in F11. Create a ledger 'Legal Expenses' and 'TDS on Legal Fees (10%)'.<br>
-                2. Pass Journal (F7): Receive a legal bill from 'Advocate Sharma' for ₹80,000. Deduct ₹8,000 TDS immediately in the entry.<br>
-                3. Pass Payment (F5): Pay ₹72,000 to Advocate Sharma via Cheque (use Cheque printing preview).<br>
-                4. Pass Payment (F5): Use Autofill (Ctrl+F) > Stat Payment to pay the ₹8,000 TDS to the Government.<br>
-                <strong>Check:</strong> Open the Balance Sheet. Ensure 'Duties & Taxes' shows zero liability for TDS after the final payment.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 148 to Day 149</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Complete Project 2. Verify that the TDS report (Form 26Q) reflects the exact transaction.
+                heading: "Week 22 (Days 106-110): TDS Deduction & Stat Payments",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 106-108: Journal (F7) Deductions</strong><br>
+                    <em>Theory:</em> Why TDS is deducted before payment via Journal. Dr Expense, Cr Party, Cr TDS.<br>
+                    <em>Practical:</em> Record 10 Audit & Rent bills. Let Tally auto-deduct the correct TDS amount.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 109-110: Remitting to Government</strong><br>
+                    <em>Theory:</em> Form 26Q and challan generation.<br>
+                    <em>Practical:</em> Use Payment (F5) > Autofill (Ctrl+F) > Stat Payment to automatically clear all pending TDS liabilities to the Bank.
                 </div>`,
                 shortcut: "TDS must ALWAYS be deducted via a Journal entry before processing the Payment voucher.",
-                imgSrc: "images/tpro-40-project2.jpg"
+                imgSrc: "images/tpro-22-tds-entries.jpg"
             },
             {
-                heading: "Project 3: Advanced Payroll Automation",
-                text: `<strong>Objective:</strong> Process a fully automated monthly salary.<br>
-                1. Enable Payroll in F11. Create Employee Group 'Managers'.<br>
-                2. Create Employee 'Suresh'. Set Basic Pay (₹25,000) and PF Deduction (12% computed on Basic).<br>
-                3. Pass Attendance (F10): Mark Suresh 'Present' for 28 days in a 30-day month.<br>
-                4. Pass Payroll (F10): Press Ctrl+F (Autofill) to process the salary. Tally will calculate 28 days of pro-rated Basic Pay and automatically deduct the 12% PF.<br>
-                <strong>Check:</strong> Go to Payroll Reports and preview Suresh's Payslip to verify the exact Net Payable amount.
-                <br><br>
-                <div style='background:#f1f5f9; padding:15px; border-radius:8px; border-left:4px solid #0f766e;'>
-                    <strong>📅 Timeline: Day 150 (Final Day)</strong><br>
-                    <strong>🛠️ Daily Practical Target:</strong> Complete Project 3. Print the final Payslip. Congratulations on completing the 6-Month Tally Prime Professional Course!
+                heading: "Week 23 (Days 111-115): TCS Setup & Invoicing",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 111-112: Tax Collected at Source</strong><br>
+                    <em>Theory:</em> How TCS differs from TDS. Applicable goods (Scrap, Timber, High-value cars).<br>
+                    <em>Practical:</em> Enable TCS in F11. Create TCS Nature of Goods configurations.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 113-115: TCS Sales Invoices</strong><br>
+                    <em>Theory:</em> Calculating TCS on the total bill value inclusive of GST.<br>
+                    <em>Practical:</em> Pass 10 Sales (F8) invoices for scrap material. Collect GST + TCS. Remit TCS via Stat Payment.
                 </div>`,
-                shortcut: "Ensure the month has 30 days in your calculation settings.",
-                imgSrc: "images/tpro-41-project3.jpg"
+                shortcut: "TCS ledgers are created under 'Duties & Taxes' with the Type set to TCS.",
+                imgSrc: "images/tpro-23-tcs-entries.jpg"
+            },
+            {
+                heading: "Week 24 (Days 116-120): Bank Reconciliation Statement (BRS)",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 116-118: Mechanics of BRS</strong><br>
+                    <em>Theory:</em> Why Company Books and Bank Passbooks mismatch. Uncleared cheques vs direct deposits.<br>
+                    <em>Practical:</em> Open the Bank Ledger. Press Alt+R. Cross-reference a mock 30-day SBI physical statement with Tally data.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 119-120: Finalizing Reconciliation</strong><br>
+                    <em>Theory:</em> Bank charges and interest adjustments.<br>
+                    <em>Practical:</em> Enter exact clearance dates until the "Balance as per Bank" in Tally perfectly matches the physical passbook.
+                </div>`,
+                shortcut: "Gateway > Banking > Bank Reconciliation (or Alt+R from the bank ledger display).",
+                imgSrc: "images/tpro-24-brs.jpg"
+            },
+            {
+                heading: "Week 25 (Days 121-125): Advanced Banking Features",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 121-123: Cheque Printing Setup</strong><br>
+                    <em>Theory:</em> Mapping physical cheque dimensions in Tally.<br>
+                    <em>Practical:</em> Configure HDFC/SBI cheque formats. Use Alt+P in a Payment voucher to test alignment on blank paper.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 124-125: Deposit Slips & OD Accounts</strong><br>
+                    <em>Theory:</em> Generating consolidated deposit slips. Understanding 'Bank OD A/c' liabilities.<br>
+                    <em>Practical:</em> Print a deposit slip for 15 received cheques. Set up an Overdraft account and process negative-balance transactions.
+                </div>`,
+                shortcut: "Bank OD A/c is a Current Liability, whereas a normal Bank A/c is a Current Asset.",
+                imgSrc: "images/tpro-25-banking.jpg"
+            }
+        ]
+    },
+
+    // ==========================================
+    // MONTH 6: PAYROLL, SECURITY & CAPSTONE PROJECTS
+    // Target: Automate salaries, secure data, and complete 3 full-scale business simulations.
+    // ==========================================
+    {
+        id: "month6",
+        title: "Month 6: Payroll & Capstone (Days 126-150)",
+        topics: [
+            {
+                heading: "Week 26 (Days 126-130): Payroll Masters & Attendance",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 126-128: Enabling Payroll & Employees</strong><br>
+                    <em>Theory:</em> F11 Payroll activation. Statutory PF/ESI codes. Creating Employee Groups (e.g., Sales, Admin).<br>
+                    <em>Practical:</em> Register 15 complete Employee Masters with PAN, Aadhaar, and Salary Bank details.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 129-130: Pay Heads & Attendance (F10)</strong><br>
+                    <em>Theory:</em> Earnings vs Statutory Deductions. Present vs Absent logic.<br>
+                    <em>Practical:</em> Create Basic, HRA, and PF Pay Heads. Pass an Attendance voucher marking specific present days for all 15 staff.
+                </div>`,
+                shortcut: "Ensure your Pay Heads are strictly defined as 'On Attendance' for Basic Pay, and 'As Computed Value' for PF.",
+                imgSrc: "images/tpro-26-payroll-setup.jpg"
+            },
+            {
+                heading: "Week 27 (Days 131-135): Payroll Processing & Payslips",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 131-133: Ctrl+F Payroll Autofill</strong><br>
+                    <em>Theory:</em> Automated salary calculation based on attendance fractions.<br>
+                    <em>Practical:</em> Open Payroll Voucher (F10) > Autofill. Generate the full month's salary and PF deductions for the entire company in one click.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 134-135: Payslip Printing & Salary Payment</strong><br>
+                    <em>Theory:</em> Generating salary slips and passing the final Bank payment entry.<br>
+                    <em>Practical:</em> Print customized Payslips for 5 employees. Pass the Bank Payment (F5) to clear the Salary Payable liability.
+                </div>`,
+                shortcut: "Ctrl + F (Payroll Autofill) is the most powerful button in the payroll system.",
+                imgSrc: "images/tpro-27-payslips.jpg"
+            },
+            {
+                heading: "Week 28 (Days 136-140): Security Control & Backup",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 136-137: Administrator Passwords</strong><br>
+                    <em>Theory:</em> Tally Vault vs Control User Access. Securing financial data.<br>
+                    <em>Practical:</em> Press Alt+K > Security. Create Admin profiles. Create restricted Data Entry profiles that cannot view the Balance Sheet.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 138-140: Backup & Restore (Alt+Y)</strong><br>
+                    <em>Theory:</em> Disaster recovery. The .tbk file format.<br>
+                    <em>Practical:</em> Backup 3 mock companies to a USB drive. Delete the companies from Tally. Restore them perfectly from the USB backup.
+                </div>`,
+                shortcut: "Warning: If you forget your Admin password, Tally Solutions cannot recover your data!",
+                imgSrc: "images/tpro-28-security-backup.jpg"
+            },
+            {
+                heading: "Week 29 (Days 141-145): Capstone Project 1 & 2",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 141-143: Project 1 - The Trading Company</strong><br>
+                    <em>Task:</em> Build 'Tech World Traders'. Enable GST. Insert ₹10L Capital. Buy 100 Laptops across 2 godowns. Sell 45 Laptops. Generate GSTR-1 and verify Gross Profit.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 144-145: Project 2 - Service & TDS Challenge</strong><br>
+                    <em>Task:</em> Build a service agency. Receive a ₹1,00,000 Contractor bill. Deduct 2% TDS via Journal. Pay the Contractor ₹98,000. Pay the ₹2,000 TDS to the Govt using Autofill. Verify zero tax liability.
+                </div>`,
+                shortcut: "Apply everything learned from Months 1 to 5 to execute these flawlessly.",
+                imgSrc: "images/tpro-29-projects-1-2.jpg"
+            },
+            {
+                heading: "Week 30 (Days 146-150): Final Capstone & Audit",
+                text: `
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 146-148: Project 3 - Manufacturing & BOM</strong><br>
+                    <em>Task:</em> Create a 'PC Assembly' item using Bill of Materials (BOM). Consume Cabinet, Motherboard, and RAM to manufacture 10 assembled PCs via Stock Journal (Alt+F7). Sell the final products with GST.
+                </div>
+                <div style='background:var(--background); padding:15px; border-radius:8px; margin-bottom:15px; border-left:4px solid var(--accent);'>
+                    <strong style='color:var(--primary);'>Day 149-150: Final Audit & Course Sign-off</strong><br>
+                    <em>Task:</em> Extract the Final Balance Sheet, P&L, and Ratio Analysis of all 3 projects. Export them to PDF (Alt+P > Export). Submit your encrypted Tally backup files for Final PGDCA Certification.
+                </div>`,
+                shortcut: "Congratulations on completing the 6-Month Tally Prime Professional curriculum!",
+                imgSrc: "images/tpro-30-final-project.jpg"
             }
         ]
     }
