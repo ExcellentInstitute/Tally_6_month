@@ -12,13 +12,13 @@
                 lockDiv.style.cssText = "position:fixed; top:0; left:0; width:100vw; height:100vh; background:#0f172a; z-index:9999999; display:flex; flex-direction:column; align-items:center; justify-content:center; color:white; font-family:'Inter', sans-serif; visibility:visible;";
                 
                 lockDiv.innerHTML = `
-                    <div style="background:#1e293b; padding:50px; border-radius:16px; text-align:center; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5); border: 1px solid #334155; max-width:90%; width:450px;">
-                        <h2 style="margin-bottom:15px; color:#10b981; font-size:2rem;">Restricted Access 🛡️</h2>
-                        <p style="color:#94a3b8; margin-bottom:30px; line-height:1.6; font-size:1.1rem;">This portal is strictly for registered students of Excellent Institute.</p>
+                    <div style="background:#1e293b; padding:40px; border-radius:12px; text-align:center; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5); border: 1px solid #334155; max-width:90%; width:400px;">
+                        <h2 style="margin-bottom:10px; color:#10b981; font-size:1.8rem;">Restricted Access 🛡️</h2>
+                        <p style="color:#94a3b8; margin-bottom:25px; line-height:1.5;">This portal is strictly for registered students of Excellent Institute.</p>
                         
-                        <input type="email" id="authEmail" placeholder="Enter Authorized Email" style="width:100%; padding:16px; margin-bottom:25px; border-radius:8px; border:2px solid #334155; background:#0f172a; color:white; text-align:center; outline:none; font-size:1.15rem; transition: border-color 0.2s;">
+                        <input type="email" id="authEmail" placeholder="Enter Authorized Email" style="width:100%; padding:14px; margin-bottom:20px; border-radius:8px; border:2px solid #334155; background:#0f172a; color:white; text-align:center; outline:none; font-size:1.1rem; transition: border-color 0.2s;">
                         
-                        <button onclick="verifyAccess()" style="width:100%; padding:16px; background:#10b981; color:white; border:none; border-radius:8px; font-size:1.2rem; font-weight:bold; cursor:pointer; transition: background 0.2s;">
+                        <button onclick="verifyAccess()" style="width:100%; padding:14px; background:#10b981; color:white; border:none; border-radius:8px; font-size:1.1rem; font-weight:bold; cursor:pointer; transition: background 0.2s;">
                             Verify Connection
                         </button>
                         
@@ -48,7 +48,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excellent Institute - Tally Prime 7.0 Advanced Pro</title>
+    <title>Excellent Institute - Tally Prime 7.0 Masterclass</title>
     <!-- Modern Font Integration -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
@@ -59,14 +59,14 @@
             --primary-light: #ccfbf1;
             --accent: #0d9488;
             --surface: #ffffff;
-            --background: #f1f5f9; 
+            --background: #f8fafc; 
             --text-main: #0f172a;
-            --text-muted: #475569;
-            --border: #cbd5e1;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-            --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.05);
-            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1);
-            --radius: 16px;
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius: 12px;
         }
         
         * { box-sizing: border-box; }
@@ -84,7 +84,7 @@
         }
 
         /* --- Custom Scrollbar --- */
-        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #99f6e4; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #5eead4; }
@@ -94,7 +94,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 32px;
+            padding: 12px 24px;
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
@@ -105,26 +105,28 @@
         .brand {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 15px;
         }
 
+        /* Sidebar Toggle Button */
         .toggle-btn {
             background: none;
             border: none;
             color: var(--primary);
             cursor: pointer;
-            padding: 8px;
+            padding: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
+            border-radius: 6px;
             transition: background 0.2s ease;
         }
         .toggle-btn:hover { background-color: var(--primary-light); }
 
+        /* Circular Logo */
         .brand img.logo {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%; 
             object-fit: cover;
             border: 2px solid var(--accent);
@@ -132,205 +134,215 @@
             cursor: pointer;
         }
 
-        .brand h2 { margin: 0; color: var(--primary); font-size: 1.5rem; font-weight: 800; cursor: pointer; }
+        .brand h2 { margin: 0; color: var(--primary); font-size: 1.3rem; font-weight: 700; cursor: pointer; }
 
+        /* Print Button */
         .action-btns button {
             background-color: var(--surface);
             color: var(--text-main);
             border: 1px solid var(--border);
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 1.05rem;
-            font-weight: 700;
+            font-weight: 600;
             font-family: inherit;
             transition: all 0.2s ease;
             box-shadow: var(--shadow-sm);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         .action-btns button:hover { 
-            background-color: var(--primary-light);
-            color: var(--primary);
-            border-color: var(--primary);
-            transform: translateY(-2px);
+            background-color: var(--background);
+            border-color: var(--text-muted);
+            transform: translateY(-1px);
         }
 
         /* --- Main Layout & Sidebar --- */
         .main-container { display: flex; flex: 1; overflow: hidden; }
 
-        /* Wider, Roomier Sidebar */
+        /* Sidebar with Smooth Collapse Transition */
         .sidebar {
-            width: 350px;
+            width: 320px;
             background-color: var(--surface);
             border-right: 1px solid var(--border);
-            padding: 30px 20px;
+            padding: 24px 16px;
             overflow-y: auto;
             overflow-x: hidden;
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 1;
         }
         
+        /* The Collapsed State for Sidebar */
         .sidebar.collapsed {
             width: 0;
-            padding: 30px 0;
+            padding: 24px 0;
             border-right: none;
             opacity: 0;
         }
         
         .nav-label {
-            font-size: 0.85rem; text-transform: uppercase; font-weight: 800;
-            color: var(--text-muted); margin-bottom: 15px; padding-left: 12px;
-            white-space: nowrap; letter-spacing: 0.05em;
+            font-size: 0.75rem; text-transform: uppercase; font-weight: 700;
+            color: var(--text-muted); margin-bottom: 10px; padding-left: 12px;
+            white-space: nowrap;
         }
 
         .nav-btn {
-            display: flex; align-items: center; width: 100%; padding: 14px 18px;
-            border: none; background: none; text-align: left; font-size: 1.05rem;
+            display: flex; align-items: center; width: 100%; padding: 12px 16px;
+            border: none; background: none; text-align: left; font-size: 0.95rem;
             font-weight: 600; color: var(--text-muted); cursor: pointer;
-            border-radius: 10px; transition: all 0.2s ease;
-            white-space: nowrap; line-height: 1.4;
+            border-radius: var(--radius); transition: all 0.2s ease;
+            white-space: nowrap;
+            line-height: 1.4;
         }
-        .nav-btn:hover { background-color: #f1f5f9; color: var(--text-main); }
+        .nav-btn:hover { background-color: var(--background); color: var(--text-main); }
         .nav-btn.active { background-color: var(--primary-light); color: var(--primary); }
 
-        /* --- Content Area & Wide Wrapper --- */
+        /* --- Content Area & Drag-to-Scroll --- */
         .content-area {
-            flex: 1; padding: 40px 0; overflow-y: auto;
+            flex: 1; padding: 40px 60px; overflow-y: auto;
             background-color: transparent; 
             cursor: grab; scroll-behavior: smooth;
         }
         .content-area:active { cursor: grabbing; } 
 
         .content-wrapper {
-            max-width: 1400px; /* Expanded Width */
-            width: 94%;
-            margin: 0 auto; 
-            background: transparent; /* Removed flat white background */
+            max-width: 1100px; margin: 0 auto; 
+            position: relative; z-index: 2; transition: max-width 0.3s ease;
             animation: fadeIn 0.4s ease forwards;
-            position: relative; z-index: 2;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .note-section { pointer-events: none; }
         .note-section.allow-select { pointer-events: auto; }
 
-        /* NEW SPATIAL DESIGN: Topic Cards */
-        .note-section h1 { 
-            text-align: center; color: var(--primary); font-size: 2.8rem; font-weight: 800; 
-            margin: 20px 0 50px 0; letter-spacing: -0.02em;
+        /* --- NEW ORGANIZATION: TOPIC CARDS & TYPOGRAPHY --- */
+        .chapter-header {
+            background: var(--surface);
+            padding: 30px 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            margin-bottom: 40px;
+            border-left: 6px solid var(--primary);
+        }
+
+        .chapter-header h1 {
+            color: var(--text-main);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin: 0;
         }
 
         .topic-card {
             background: var(--surface);
+            padding: 35px 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
             border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 50px 60px; /* Huge breathing room */
-            margin-bottom: 40px;
-            box-shadow: var(--shadow-md);
+            margin-bottom: 35px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .topic-card:hover {
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
         }
 
         .topic-card h3 { 
-            color: var(--text-main); font-size: 1.7rem; font-weight: 800; 
-            margin: 0 0 20px 0; padding-bottom: 15px; border-bottom: 2px solid #e2e8f0; 
+            color: var(--primary); 
+            font-size: 1.5rem; 
+            margin: 0 0 20px 0; 
+            border-bottom: 2px solid var(--background); 
+            padding-bottom: 12px; 
         }
         
-        .topic-card p, .topic-card li { 
-            line-height: 1.8; font-size: 1.15rem; color: #334155; margin-bottom: 20px;
+        .topic-card p { 
+            line-height: 1.8; 
+            font-size: 1.15rem; 
+            color: #334155; 
+            margin-bottom: 20px;
         }
 
         /* KEYBOARD SHORTCUT STYLING */
         .shortcut-box {
-            background-color: var(--primary-light);
-            border-left: 5px solid var(--accent);
-            padding: 16px 24px;
-            margin: 25px 0;
-            border-radius: 0 12px 12px 0;
-            display: inline-flex;
+            background-color: #f0fdfa; /* Extremely light teal */
+            border-left: 4px solid var(--accent);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            display: flex;
             align-items: center;
-            gap: 15px;
-            font-size: 1.15rem;
+            gap: 12px;
+            font-size: 1.05rem;
             color: var(--primary);
-            width: 100%; /* Make it fill the card */
+            line-height: 1.6;
         }
         
         kbd {
             background-color: #ffffff;
             border: 1px solid #cbd5e1;
-            border-bottom: 4px solid #94a3b8;
-            border-radius: 8px;
-            padding: 6px 12px;
+            border-bottom: 3px solid #94a3b8;
+            border-radius: 6px;
+            padding: 4px 10px;
             font-size: 0.95em;
             font-family: 'Courier New', Courier, monospace;
             color: #1e293b;
-            font-weight: 800;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-weight: 700;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
 
-        /* Bigger, clearer Images */
+        /* Clickable Images */
         .topic-card img {
-            max-width: 900px; /* Expanded for high-res visibility */
-            width: 100%; height: auto; border: 1px solid var(--border);
-            border-radius: 12px; margin: 35px auto 20px auto; display: block; 
-            box-shadow: var(--shadow-sm); cursor: zoom-in; pointer-events: auto; 
-            transition: transform 0.2s, box-shadow 0.2s;
+            max-width: 100%; width: 100%; height: auto; border: 1px solid var(--border);
+            border-radius: 10px; margin: 30px auto 10px auto; display: block; box-shadow: var(--shadow-sm);
+            cursor: zoom-in; pointer-events: auto; transition: transform 0.2s;
         }
-        .topic-card img:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
-        .img-caption { font-size: 1rem; color: var(--text-muted); text-align: center; font-weight: 600; margin-bottom: 10px; }
+        .topic-card img:hover { transform: scale(1.01); box-shadow: var(--shadow-md); }
+        .img-caption { font-size: 0.95rem; color: var(--text-muted); text-align: center; margin-bottom: 10px; font-weight: 500; }
 
         /* --- Dashboard Grid (Home View) --- */
-        .hero { text-align: center; margin-bottom: 60px; margin-top: 20px; }
-        .hero h1 { font-size: 3rem; color: var(--text-main); margin-bottom: 15px; font-weight: 800; }
-        .hero p { color: var(--text-muted); font-size: 1.25rem; }
+        .hero { text-align: center; margin-bottom: 50px; background: var(--surface); padding: 50px; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+        .hero h1 { font-size: 2.5rem; color: var(--text-main); margin: 0 0 15px 0; }
+        .hero p { color: var(--text-muted); font-size: 1.15rem; margin: 0; }
         
-        .dashboard-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); /* Bigger cards */
-            gap: 32px; /* Wider gaps */
-            pointer-events: auto; 
-        }
-        
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; pointer-events: auto; }
         .module-card {
             background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-            padding: 32px; cursor: pointer; transition: all 0.3s ease; box-shadow: var(--shadow-md);
-            display: flex; flex-direction: column; align-items: flex-start; height: 100%;
+            padding: 30px; cursor: pointer; transition: all 0.3s ease; box-shadow: var(--shadow-sm);
+            display: flex; flex-direction: column; align-items: flex-start;
         }
-        .module-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+        .module-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
         .card-icon {
-            font-size: 2.5rem; margin-bottom: 20px; background: var(--primary-light);
-            width: 65px; height: 65px; display: flex; align-items: center; justify-content: center; border-radius: 14px;
+            font-size: 2.2rem; margin-bottom: 20px; background: var(--primary-light);
+            width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 12px;
         }
-        .module-card h3 { margin: 0 0 12px 0; color: var(--text-main); font-size: 1.4rem; line-height: 1.3; }
-        .module-card span { font-size: 0.95rem; color: var(--text-muted); font-weight: 700; background: #f1f5f9; padding: 6px 12px; border-radius: 20px;}
+        .module-card h3 { margin: 0 0 10px 0; color: var(--text-main); font-size: 1.25rem; line-height: 1.4; }
+        .module-card span { font-size: 0.9rem; color: var(--text-muted); font-weight: 600; }
 
         /* --- Zoomable Lightbox Modal --- */
         #lightbox {
             display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px);
+            background-color: rgba(15, 23, 42, 0.9); backdrop-filter: blur(5px);
             overflow: auto; text-align: center; padding: 50px 20px;
         }
         #lightbox img { 
             display: inline-block; vertical-align: middle;
-            max-width: 95%; max-height: 90vh; border-radius: 12px; 
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8); 
+            max-width: 90%; max-height: 85vh; border-radius: 8px; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); 
             cursor: zoom-in; transition: all 0.3s ease; transform-origin: top center;
         }
         #lightbox img.zoomed {
-            max-width: none; max-height: none; width: 150%; cursor: zoom-out; margin-bottom: 50px;
+            max-width: none; max-height: none; width: 140%; cursor: zoom-out; margin-bottom: 50px;
         }
 
         /* --- Universal Watermark --- */
@@ -340,30 +352,18 @@
             z-index: 1; border-radius: 50%; object-fit: cover;
         }
 
-        /* --- Password Lock Screen Wrapper --- */
-        .lock-card-wrapper {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 80px 40px;
-            text-align: center;
-            box-shadow: var(--shadow-lg);
-            max-width: 700px;
-            margin: 10vh auto;
-            pointer-events: auto;
-        }
-
         /* --- Responsive Design (Mobile) --- */
         @media (max-width: 768px) {
             .main-container { flex-direction: column; }
-            .sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); flex-direction: row; overflow-x: auto; padding: 16px; gap: 12px;}
+            .sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); flex-direction: row; overflow-x: auto; padding: 12px; gap: 10px;}
             .sidebar.collapsed { height: 0; padding: 0; border: none; opacity: 0; }
             .nav-label { display: none; }
-            .nav-btn { white-space: nowrap; padding: 10px 20px; border-radius: 30px; border: 1px solid var(--border); }
-            .content-area { padding: 20px 10px; }
-            .content-wrapper { padding: 0; width: 100%; }
-            .topic-card { padding: 30px 20px; }
-            .watermark-bg { width: 80vw; }
+            .nav-btn { white-space: nowrap; padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border); }
+            .content-area { padding: 20px 15px; }
+            .content-wrapper { padding: 0; }
+            .topic-card { padding: 20px; margin-bottom: 20px; }
+            .chapter-header { padding: 20px; }
+            .watermark-bg { width: 70vw; }
         }
 
         /* --- Print & PDF Export Styling --- */
@@ -371,15 +371,14 @@
             body, .main-container { height: auto; overflow: visible; display: block; background-color: transparent !important; }
             .sidebar, .header, .action-btns, .dashboard-grid, .hero { display: none !important; }
             .content-area { padding: 0; cursor: auto; background-color: transparent !important; }
-            .content-wrapper { margin: 0; padding: 0; box-shadow: none; border: none; max-width: 100%; width: 100%; background: transparent !important; }
-            .topic-card { border: none; box-shadow: none; padding: 20px 0; margin-bottom: 20px; page-break-inside: avoid; }
+            .content-wrapper { margin: 0; padding: 0; box-shadow: none; border: none; max-width: 100%; background: transparent !important; }
+            .topic-card { box-shadow: none; border: none; padding: 0; margin-bottom: 40px; page-break-inside: avoid; background: transparent; }
+            .chapter-header { box-shadow: none; border: none; padding: 0; margin-bottom: 20px; background: transparent; border-left: none; page-break-before: always;}
             .note-section { pointer-events: auto; }
             .watermark-bg { display: block; opacity: 0.08; width: 60vw; max-width: 600px; }
-            h1 { page-break-before: always; color: #000; }
-            h1:first-of-type { page-break-before: auto; }
-            h3 { color: #000; border-bottom: 2px solid #ccc; }
+            h1 { color: #000; }
+            h3 { color: #000; border-bottom: 1px solid #ccc; }
             img { page-break-inside: avoid; border: none; }
-            p, h3, .shortcut-box { page-break-inside: avoid; }
             .shortcut-box { border: 1px solid #000 !important; background: transparent !important; color: #000 !important; }
             kbd { border: 1px solid #000 !important; box-shadow: none !important; background: transparent !important; }
         }
@@ -392,7 +391,7 @@
         <div class="brand">
             <!-- Sidebar Toggle Button -->
             <button id="sidebar-toggle" class="toggle-btn" onclick="toggleSidebar()" title="Hide/Show Menu">
-                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
@@ -400,7 +399,7 @@
             <h2 onclick="loadDashboard()">Excellent Institute</h2>
         </div>
         <div class="action-btns">
-            <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+            <button onclick="window.print()">🖨️ Print / PDF</button>
         </div>
     </div>
 
@@ -413,8 +412,8 @@
         <!-- Sidebar -->
         <div class="sidebar" id="main-sidebar">
             <div class="nav-label">Course Modules</div>
-            <button class="nav-btn active" onclick="loadDashboard()" id="home-btn">🏠 Main Dashboard</button>
-            <div id="nav-container" style="display: flex; flex-direction: column; gap: 8px;">
+            <button class="nav-btn active" onclick="loadDashboard()" id="home-btn">🏠 Dashboard</button>
+            <div id="nav-container" style="display: flex; flex-direction: column; gap: 6px;">
                 <!-- JavaScript will inject chapter buttons here -->
             </div>
         </div>
@@ -439,8 +438,8 @@
         const contentDisplay = document.getElementById('content-display');
         const sidebar = document.getElementById('main-sidebar');
         
-        // PGDCA Exclusive Lock
-        let isPgdcaUnlocked = false; 
+        // Tally Course Exclusive Lock
+        let isTallyUnlocked = false; 
 
         // 1. Initialize Application
         function initApp() {
@@ -455,7 +454,7 @@
                 btn.className = 'nav-btn note-nav-btn';
                 
                 // Everything is strictly locked initially
-                let displayIcon = isPgdcaUnlocked ? '📒' : '🔒';
+                let displayIcon = isTallyUnlocked ? '📒' : '🔒';
                 
                 btn.innerHTML = `${displayIcon} ${chapter.title.split(':')[0]}`; 
                 
@@ -476,17 +475,17 @@
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
 
             let html = `
-            <div class="content-wrapper allow-select" style="text-align: center; margin-top: 5vh; background: transparent; box-shadow: none;">
-                <h1 style="font-size: 3.2rem; color: var(--primary); margin-bottom: 15px; font-weight:800;">Tally Prime 7.0 (Advanced Pro)</h1>
-                <p style="font-size: 1.3rem; color: var(--text-muted); margin-bottom: 40px;">PGDCA Exclusive: Deep-dive Professional Accounting and Automation.</p>
+            <div class="content-wrapper allow-select" style="text-align: center; margin-top: 5vh; background: var(--surface); padding: 50px; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-md);">
+                <h1 style="font-size: 2.8rem; color: var(--primary); margin-bottom: 10px;">Tally Prime 7.0 Masterclass</h1>
+                <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px;">Exclusive Tally Course: Complete Accounting, GST, and Automation.</p>
                 
                 <!-- Application Preview Image -->
-                <img src="images/tpro-preview.jpg" alt="App Preview" style="width: 100%; max-width: 600px; border-radius: 16px; box-shadow: var(--shadow-lg); border: 1px solid var(--border); margin-bottom: 50px; cursor: zoom-in;" onclick="openLightbox(this.src)">
+                <img src="images/tpro-preview.jpg" alt="App Preview" style="width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 2px solid var(--border); margin-bottom: 40px; cursor: zoom-in;" onclick="openLightbox(this.src)">
                 <br>
                 
                 <!-- The Enter Button -->
-                <button onclick="loadDashboard()" style="background-color: var(--primary); color: white; border: none; padding: 18px 50px; font-size: 1.3rem; border-radius: 12px; cursor: pointer; font-weight: 800; box-shadow: var(--shadow-lg); transition: transform 0.2s;">
-                    Enter Pro Portal 🚀
+                <button onclick="loadDashboard()" style="background-color: var(--primary); color: white; border: none; padding: 15px 40px; font-size: 1.2rem; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: var(--shadow-md);">
+                    Enter Tally Portal 🚀
                 </button>
             </div>`;
             
@@ -500,10 +499,10 @@
             document.getElementById('home-btn').classList.add('active');
 
             let html = `
-            <div class="content-wrapper allow-select" style="background: transparent; box-shadow: none;">
+            <div class="content-wrapper allow-select">
                 <div class="hero">
-                    <h1>Tally Prime 7.0 Advanced Pro</h1>
-                    <p>Exclusive curriculum for professional accountants and PGDCA students.</p>
+                    <h1>Tally Prime 7.0 Professional Course</h1>
+                    <p>Dedicated curriculum for specialized accounting students.</p>
                 </div>
                 <div class="dashboard-grid">`;
             
@@ -511,9 +510,9 @@
             if (typeof tallyProBookData !== 'undefined') {
                 tallyProBookData.forEach((chapter, index) => {
                     
-                    let isLocked = !isPgdcaUnlocked;
+                    let isLocked = !isTallyUnlocked;
                     let icon = isLocked ? '🔒' : '📒';
-                    let lockedText = isLocked ? '<span style="color:#ef4444; font-size:0.95rem; margin-left: 8px;"> (PGDCA Locked)</span>' : '';
+                    let lockedText = isLocked ? '<span style="color:#ef4444; font-size:0.9rem;"> (Locked)</span>' : '';
                     
                     html += `
                         <div class="module-card" onclick="document.querySelectorAll('.note-nav-btn')[${index}].click()">
@@ -534,24 +533,22 @@
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             if(clickedBtn) clickedBtn.classList.add('active');
 
-            // --- STRICT PGDCA EXCLUSIVE LOCK ---
-            if (!isPgdcaUnlocked) {
+            // --- STRICT TALLY COURSE LOCK ---
+            if (!isTallyUnlocked) {
                 let lockHtml = `
-                <div class="content-wrapper allow-select" style="background: transparent; box-shadow: none;">
-                    <div class="lock-card-wrapper">
-                        <div style="font-size: 6rem; margin-bottom: 20px;">🔒</div>
-                        <h2 style="color: var(--primary); font-size: 2.5rem; font-weight:800; margin-bottom: 20px;">PGDCA Masterclass Locked</h2>
-                        <p style="color: var(--text-muted); font-size: 1.25rem; margin-bottom: 40px; line-height: 1.6;">This detailed masterclass is restricted to the PGDCA syllabus. Please enter your PGDCA password to access all modules.</p>
-                        
-                        <input type="password" id="pgdcaPass" placeholder="Enter PGDCA Password" style="padding: 16px; font-size: 1.3rem; border: 2px solid var(--primary); border-radius: 12px; width: 100%; max-width: 300px; text-align: center; outline: none; margin-bottom: 30px;">
-                        <br>
-                        
-                        <button onclick="checkPgdcaPassword(${index})" style="background-color: var(--primary); color: white; border: none; padding: 16px 50px; font-size: 1.25rem; border-radius: 10px; cursor: pointer; font-weight: 800; box-shadow: var(--shadow-md); transition: transform 0.2s;">
-                            Unlock Course 🔓
-                        </button>
-                        
-                        <p id="wrong-pass-msg" style="color: #ef4444; font-weight: 800; font-size: 1.1rem; margin-top: 25px; display: none;">❌ Access Denied! DCA Passwords are not accepted here.</p>
-                    </div>
+                <div class="content-wrapper allow-select" style="text-align: center; padding: 80px 20px; background: var(--surface); border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-md);">
+                    <div style="font-size: 5rem; margin-bottom: 10px;">🔒</div>
+                    <h2 style="color: var(--primary); font-size: 2rem;">Course Modules Locked</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 25px;">This detailed masterclass is restricted to specialized Tally students. Please enter the TALLY password to access all modules.</p>
+                    
+                    <input type="password" id="tallyPass" placeholder="Password" style="padding: 12px; font-size: 1.2rem; border: 2px solid var(--primary); border-radius: 8px; width: 100%; max-width: 250px; text-align: center; outline: none;">
+                    <br><br>
+                    
+                    <button onclick="checkTallyPassword(${index})" style="background-color: var(--primary); color: white; border: none; padding: 12px 40px; font-size: 1.1rem; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: var(--shadow-md);">
+                        Unlock 🔓
+                    </button>
+                    
+                    <p id="wrong-pass-msg" style="color: #ef4444; font-weight: bold; margin-top: 15px; display: none;">❌ Access Denied! Incorrect Password.</p>
                 </div>`;
                 
                 contentDisplay.innerHTML = lockHtml;
@@ -560,24 +557,28 @@
                 return; 
             }
 
-            // --- Render the Actual Spaced-Out Content ---
+            // --- Render the Actual Content ---
             const chapter = tallyProBookData[index];
+            
+            // The Chapter Header is now separated from the topics
             let htmlContent = `
             <div class="content-wrapper">
                 <div class="note-section allow-select">
-                    <h1>${chapter.title}</h1>`;
+                    <div class="chapter-header">
+                        <h1>${chapter.title}</h1>
+                    </div>`;
             
-            // Loop through topics and wrap each one in a spacious .topic-card
+            // Every topic is now mapped into its own beautiful floating card
             chapter.topics.forEach(topic => {
-                htmlContent += `<div class="topic-card">`;
-                htmlContent += `<h3>${topic.heading}</h3>`;
-                htmlContent += `<p>${topic.text}</p>`;
+                htmlContent += `
+                <div class="topic-card">
+                    <h3>${topic.heading}</h3>
+                    <p>${topic.text}</p>`;
                 
-                // Add Shortcut formatting if it exists
                 if(topic.shortcut) {
                     htmlContent += `
                     <div class="shortcut-box">
-                        <strong>⌨️ Navigation / Pro-Tip:</strong> <kbd>${topic.shortcut}</kbd>
+                        <strong>⌨️ Navigation / Pro-Tip:</strong> <span><kbd>${topic.shortcut}</kbd></span>
                     </div>`;
                 }
 
@@ -589,7 +590,7 @@
                 htmlContent += `</div>`; // Close topic-card
             });
             
-            htmlContent += `</div></div>`; // Close note-section and content-wrapper
+            htmlContent += `</div></div>`; // Close note-section & content-wrapper
             
             contentDisplay.innerHTML = htmlContent;
             contentDisplay.scrollTop = 0;
@@ -599,12 +600,12 @@
             }
         }
 
-        // 6. Verify PGDCA Password
-        function checkPgdcaPassword(index) {
-            const input = document.getElementById('pgdcaPass').value.trim().toUpperCase(); 
+        // 6. Verify Tally Password
+        function checkTallyPassword(index) {
+            const input = document.getElementById('tallyPass').value.trim().toUpperCase(); 
             
-            if (input === "PGDCA") {
-                isPgdcaUnlocked = true;
+            if (input === "TALLY") {
+                isTallyUnlocked = true;
                 
                 // Instantly turn all 🔒 into 📒
                 document.querySelectorAll('.note-nav-btn').forEach((btn) => {
@@ -644,7 +645,7 @@
         let scrollTop;
 
         contentDisplay.addEventListener('mousedown', (e) => {
-            if(e.target.closest('.module-card') || e.target.closest('.topic-card') || e.target.tagName === 'IMG' || e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON') return;
+            if(e.target.closest('.module-card') || e.target.tagName === 'IMG' || e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON') return;
             isDown = true;
             startY = e.pageY - contentDisplay.offsetTop;
             scrollTop = contentDisplay.scrollTop;
