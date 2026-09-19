@@ -48,7 +48,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excellent Institute - Tally Prime 7.0 Advanced Pro</title>
+    <title>Excellent Institute - Tally Prime 7.0 Masterclass</title>
     <!-- Modern Font Integration -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
@@ -391,8 +391,8 @@
         const contentDisplay = document.getElementById('content-display');
         const sidebar = document.getElementById('main-sidebar');
         
-        // PGDCA Exclusive Lock
-        let isPgdcaUnlocked = false; 
+        // Tally Course Exclusive Lock
+        let isTallyUnlocked = false; 
 
         // 1. Initialize Application
         function initApp() {
@@ -407,7 +407,7 @@
                 btn.className = 'nav-btn note-nav-btn';
                 
                 // Everything is strictly locked initially
-                let displayIcon = isPgdcaUnlocked ? '📒' : '🔒';
+                let displayIcon = isTallyUnlocked ? '📒' : '🔒';
                 
                 btn.innerHTML = `${displayIcon} ${chapter.title.split(':')[0]}`; 
                 
@@ -429,8 +429,8 @@
 
             let html = `
             <div class="content-wrapper allow-select" style="text-align: center; margin-top: 5vh;">
-                <h1 style="font-size: 2.8rem; color: var(--primary); margin-bottom: 10px;">Tally Prime 7.0 (Advanced Pro)</h1>
-                <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px;">PGDCA Exclusive: Deep-dive Professional Accounting and Automation.</p>
+                <h1 style="font-size: 2.8rem; color: var(--primary); margin-bottom: 10px;">Tally Prime 7.0 Masterclass</h1>
+                <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px;">Exclusive Tally Course: Complete Accounting, GST, and Automation.</p>
                 
                 <!-- Application Preview Image -->
                 <img src="images/tpro-preview.jpg" alt="App Preview" style="width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 2px solid var(--border); margin-bottom: 40px; cursor: zoom-in;" onclick="openLightbox(this.src)">
@@ -438,7 +438,7 @@
                 
                 <!-- The Enter Button -->
                 <button onclick="loadDashboard()" style="background-color: var(--primary); color: white; border: none; padding: 15px 40px; font-size: 1.2rem; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: var(--shadow-md);">
-                    Enter Pro Portal 🚀
+                    Enter Tally Portal 🚀
                 </button>
             </div>`;
             
@@ -454,8 +454,8 @@
             let html = `
             <div class="content-wrapper allow-select">
                 <div class="hero">
-                    <h1>Tally Prime 7.0 Advanced Pro</h1>
-                    <p>Exclusive curriculum for professional accountants and PGDCA students.</p>
+                    <h1>Tally Prime 7.0 Professional Course</h1>
+                    <p>Dedicated curriculum for specialized accounting students.</p>
                 </div>
                 <div class="dashboard-grid">`;
             
@@ -463,9 +463,9 @@
             if (typeof tallyProBookData !== 'undefined') {
                 tallyProBookData.forEach((chapter, index) => {
                     
-                    let isLocked = !isPgdcaUnlocked;
+                    let isLocked = !isTallyUnlocked;
                     let icon = isLocked ? '🔒' : '📒';
-                    let lockedText = isLocked ? '<span style="color:#ef4444; font-size:0.9rem;"> (PGDCA Locked)</span>' : '';
+                    let lockedText = isLocked ? '<span style="color:#ef4444; font-size:0.9rem;"> (Locked)</span>' : '';
                     
                     html += `
                         <div class="module-card" onclick="document.querySelectorAll('.note-nav-btn')[${index}].click()">
@@ -486,22 +486,22 @@
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             if(clickedBtn) clickedBtn.classList.add('active');
 
-            // --- STRICT PGDCA EXCLUSIVE LOCK ---
-            if (!isPgdcaUnlocked) {
+            // --- STRICT TALLY COURSE LOCK ---
+            if (!isTallyUnlocked) {
                 let lockHtml = `
                 <div class="content-wrapper allow-select" style="text-align: center; padding: 80px 20px;">
                     <div style="font-size: 5rem; margin-bottom: 10px;">🔒</div>
-                    <h2 style="color: var(--primary); font-size: 2rem;">PGDCA Masterclass Locked</h2>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 25px;">This detailed masterclass is restricted to the PGDCA syllabus. Please enter your PGDCA password to access all modules.</p>
+                    <h2 style="color: var(--primary); font-size: 2rem;">Course Modules Locked</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 25px;">This detailed masterclass is restricted to specialized Tally students. Please enter the TALLY password to access all modules.</p>
                     
-                    <input type="password" id="pgdcaPass" placeholder="Password" style="padding: 12px; font-size: 1.2rem; border: 2px solid var(--primary); border-radius: 8px; width: 100%; max-width: 250px; text-align: center; outline: none;">
+                    <input type="password" id="tallyPass" placeholder="Password" style="padding: 12px; font-size: 1.2rem; border: 2px solid var(--primary); border-radius: 8px; width: 100%; max-width: 250px; text-align: center; outline: none;">
                     <br><br>
                     
-                    <button onclick="checkPgdcaPassword(${index})" style="background-color: var(--primary); color: white; border: none; padding: 12px 40px; font-size: 1.1rem; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: var(--shadow-md);">
+                    <button onclick="checkTallyPassword(${index})" style="background-color: var(--primary); color: white; border: none; padding: 12px 40px; font-size: 1.1rem; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: var(--shadow-md);">
                         Unlock 🔓
                     </button>
                     
-                    <p id="wrong-pass-msg" style="color: #ef4444; font-weight: bold; margin-top: 15px; display: none;">❌ Access Denied! DCA Passwords are not accepted here.</p>
+                    <p id="wrong-pass-msg" style="color: #ef4444; font-weight: bold; margin-top: 15px; display: none;">❌ Access Denied! Incorrect Password.</p>
                 </div>`;
                 
                 contentDisplay.innerHTML = lockHtml;
@@ -544,12 +544,12 @@
             }
         }
 
-        // 6. Verify PGDCA Password
-        function checkPgdcaPassword(index) {
-            const input = document.getElementById('pgdcaPass').value.trim().toUpperCase(); 
+        // 6. Verify Tally Password
+        function checkTallyPassword(index) {
+            const input = document.getElementById('tallyPass').value.trim().toUpperCase(); 
             
-            if (input === "PGDCA") {
-                isPgdcaUnlocked = true;
+            if (input === "TALLY") {
+                isTallyUnlocked = true;
                 
                 // Instantly turn all 🔒 into 📒
                 document.querySelectorAll('.note-nav-btn').forEach((btn) => {
