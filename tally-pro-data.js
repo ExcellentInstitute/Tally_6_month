@@ -551,7 +551,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "TDS is almost always deducted via a Journal Entry before the actual payment is made.",
-            imgSrc: "images/tpro-29-tds-entries.png"
+            imgSrc: "images/31.png"
         }
     ]
 });
@@ -578,7 +578,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Proper employee grouping allows you to process salaries for whole departments at once.",
-            imgSrc: "images/tpro-31-payroll-enable.png"
+            imgSrc: "images/32.png"
         },
         {
             heading: "Attendance & Pay Heads Configuration",
@@ -597,7 +597,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Pay Heads define the logic. Salary Details attach that logic to the specific person.",
-            imgSrc: "images/tpro-33-pay-heads.png"
+            imgSrc: "images/33.png"
         },
         {
             heading: "Processing Payroll & Payslip Generation",
@@ -614,7 +614,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Ctrl + F (Payroll Autofill) is the most powerful automation button in the payroll system.",
-            imgSrc: "images/tpro-34-payroll-process.png"
+            imgSrc: "images/34.png"
         }
     ]
 });
@@ -640,7 +640,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Gateway > Banking > Bank Reconciliation (or Alt+R from the bank ledger display).",
-            imgSrc: "images/tpro-35-brs.png"
+            imgSrc: "images/35.png"
         },
         {
             heading: "Cheque Printing & e-Banking Integration",
@@ -657,7 +657,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Always use 'Print Preview' to check alignment before wasting a real physical cheque.",
-            imgSrc: "images/tpro-36-cheque-print.png"
+            imgSrc: "images/36.png"
         }
     ]
 });
@@ -687,7 +687,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Save your data backup (Alt+Y) in your student folder after completing the project.",
-            imgSrc: "images/tpro-39-project1.png"
+            imgSrc: "images/37.png"
         },
         {
             heading: "Project 2: The Service & Taxation Challenge",
@@ -707,7 +707,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "TDS must ALWAYS be deducted via a Journal entry before processing the Payment voucher.",
-            imgSrc: "images/tpro-40-project2.png"
+            imgSrc: "images/38.png"
         },
         {
             heading: "Project 3: Advanced Payroll Automation",
@@ -724,7 +724,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Ensure the month has 30 days in your calculation settings.",
-            imgSrc: "images/tpro-41-project3.png"
+            imgSrc: "images/39.png"
         }
     ]
 });
