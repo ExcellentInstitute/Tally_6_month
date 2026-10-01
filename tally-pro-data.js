@@ -20,7 +20,7 @@ tallyProBookData.push({
             1. To find out if the business is making a <strong>Profit or a Loss</strong> at the end of the year.<br>
             2. To show the exact <strong>Financial Position</strong> (how much the business owns vs. how much it owes).`,
             shortcut: "Accounting replaces human memory with permanent, mathematically proven records.",
-            imgSrc: "images/tpro-01-intro.jpg"
+            imgSrc: "images/T1.png"
         },
         {
             heading: "The Business Entity Concept",
@@ -29,7 +29,7 @@ tallyProBookData.push({
             - When Rahul puts his own money into the shop cash box, the shop treats Rahul as a lender. This money is called <strong>Capital</strong>.<br>
             - If Rahul takes ₹500 from the shop's cash box to buy a birthday gift for his son, it is not a business expense. It is recorded as <strong>Drawings</strong> (money withdrawn for personal use).`,
             shortcut: "Always think from the perspective of the Business, never from the perspective of the Owner.",
-            imgSrc: "images/tpro-02-entity.jpg"
+            imgSrc: "images/T2.png"
         },
         {
             heading: "Crucial Accounting Vocabulary (Part 1)",
@@ -40,7 +40,7 @@ tallyProBookData.push({
                 <li><strong>Goods / Stock:</strong> The specific items a business buys <em>only to resell</em> for profit. If a mobile shop buys a Samsung phone, it is 'Goods'. If they buy an AC for their office wall, it is an 'Asset'.</li>
             </ul>`,
             shortcut: "Assets put money in your pocket. Liabilities take money out of your pocket.",
-            imgSrc: "images/tpro-03-vocab1.jpg"
+            imgSrc: "images/T3.png"
         },
         {
             heading: "Crucial Accounting Vocabulary (Part 2)",
@@ -50,7 +50,7 @@ tallyProBookData.push({
                 <li><strong>Sundry Creditors (Suppliers):</strong> A person from whom you buy goods on <em>credit (udhaar)</em>. You OWE them money. Creditors are your Liabilities because you must pay them in the future.</li>
             </ul>`,
             shortcut: "Debtors = People who give us money later. Creditors = People we give money to later.",
-            imgSrc: "images/tpro-04-vocab2.jpg"
+            imgSrc: "images/T4.png"
         }
     ]
 });
@@ -70,7 +70,7 @@ tallyProBookData.push({
             1. A Computer comes into the business.<br>
             2. ₹50,000 Cash goes out of the business.`,
             shortcut: "Debit and Credit are just left and right sides of a ledger. They have no meaning until we apply the Golden Rules.",
-            imgSrc: "images/tpro-05-double-entry.jpg"
+            imgSrc: "images/T5.png"
         },
         {
             heading: "Rule 1: Real Accounts (Assets & Properties)",
@@ -84,7 +84,7 @@ tallyProBookData.push({
             - Furniture comes in 👉 Debit Furniture A/c.<br>
             - Cash goes out 👉 Credit Cash A/c.`,
             shortcut: "If you can physically touch it and it belongs to the business, it is a Real Account.",
-            imgSrc: "images/tpro-06-real-rule.jpg"
+            imgSrc: "images/T6.png"
         },
         {
             heading: "Rule 2: Personal Accounts (People & Companies)",
@@ -98,7 +98,7 @@ tallyProBookData.push({
             - Rahul is receiving the cash 👉 Debit Rahul A/c.<br>
             - (Cash is going out, so applying the Real rule) 👉 Credit Cash A/c.`,
             shortcut: "Bank Accounts are Personal Accounts because a Bank is an artificial legal person receiving or giving your money.",
-            imgSrc: "images/tpro-07-personal-rule.jpg"
+            imgSrc: "images/T7.png"
         },
         {
             heading: "Rule 3: Nominal Accounts (Incomes & Expenses)",
@@ -112,7 +112,7 @@ tallyProBookData.push({
             - Rent is an expense 👉 Debit Rent A/c.<br>
             - Cash goes out 👉 Credit Cash A/c.`,
             shortcut: "If you cannot touch it, and it just represents a reason why money moved, it is a Nominal Account.",
-            imgSrc: "images/tpro-08-nominal-rule.jpg"
+            imgSrc: "images/T8.png"
         }
     ]
 });
@@ -134,14 +134,14 @@ tallyProBookData.push({
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To Cash A/c ......... Cr. 5,000<br>
             <em>(Narration: Being office rent paid in cash)</em>`,
             shortcut: "The Narration is a short English sentence written under the entry to explain what happened.",
-            imgSrc: "images/tpro-09-journal.jpg"
+            imgSrc: "images/T9.png"
         },
         {
             heading: "Step 2: Ledger Posting",
             text: `If the boss asks, "How much total rent did we pay this year?", looking through a 500-page daily Journal is impossible. <br><br>
             Therefore, we transfer data from the Journal into a <strong>Ledger</strong>. A Ledger is a separate, dedicated T-shaped book for one specific item (e.g., a 'Rent Ledger' page, a 'Cash Ledger' page). All Rent entries from the entire year are gathered onto the Rent Ledger page so you can instantly see the total balance.`,
             shortcut: "A Ledger classifies scattered daily transactions into organized individual folders.",
-            imgSrc: "images/tpro-10-ledger-posting.jpg"
+            imgSrc: "images/T10.png"
         },
         {
             heading: "Step 3: Trial Balance & Final Accounts",
@@ -151,7 +151,7 @@ tallyProBookData.push({
             - <em>Profit & Loss A/c:</em> Subtracts indirect expenses (Salaries, Rent) to find the Net Profit.<br>
             - <em>Balance Sheet:</em> A final statement showing the business's Assets on the right and Liabilities on the left.`,
             shortcut: "Why do we use Tally? In Tally, you ONLY do Step 1 (Voucher Entry). Tally instantly and automatically creates the Ledgers, Trial Balance, and Final Accounts without any math!",
-            imgSrc: "images/tpro-11-accounting-cycle.jpg"
+            imgSrc: "images/T11.png"
         }
     ]
 });
@@ -171,7 +171,7 @@ tallyProBookData.push({
             - It allows seamless multitasking. You can stop in the middle of a bill, check a report, and return without losing data.<br>
             - Under the hood, Prime 7.0 is heavily upgraded to handle complex modern GST compliance, e-Way bills, and WhatsApp invoice sharing automatically.`,
             shortcut: "Tally Prime is designed to be fully operated using a keyboard. Reaching for a mouse slows down a professional accountant.",
-            imgSrc: "images/tpro-12-tally-prime.jpg"
+            imgSrc: "images/T12.png"
         },
         {
             heading: "Educational Mode vs. Licensed Mode",
@@ -179,7 +179,7 @@ tallyProBookData.push({
             <strong>What is the exact difference?</strong><br>
             In Educational Mode, you have 100% access to every single feature (GST, Payroll, Printing, Balance Sheets). The <em>only</em> restriction is the Date. You can only record transactions on the <strong>1st, 2nd, and 31st</strong> of any month. You cannot enter a bill dated the 15th. For a student, this is perfectly fine!`,
             shortcut: "When you open Tally, always click 'Continue in Educational Mode' (or press 'T' on your keyboard).",
-            imgSrc: "images/tpro-13-edu-mode.jpg"
+            imgSrc: "images/T13.png"
         },
         {
             heading: "Installation and The First Screen",
@@ -192,7 +192,7 @@ tallyProBookData.push({
             - Print (Alt+P)<br>
             - Help (F1)`,
             shortcut: "Notice the underline under the letter 'K' in the top menu? A single underline in Tally means 'Press Alt'. A double underline means 'Press Ctrl'.",
-            imgSrc: "images/tpro-14-first-screen.jpg"
+            imgSrc: "images/T14.png"
         },
         {
             heading: "The Gateway of Tally & Navigation Secrets",
@@ -203,7 +203,7 @@ tallyProBookData.push({
             - <strong>Enter:</strong> To go inside a menu or accept a line.<br>
             - <strong>Ctrl + A:</strong> The 'Quick Save' button. Instantly accept and save any screen without pressing 'Enter' twenty times.`,
             shortcut: "Never use the 'X' at the top right to close Tally. Go to the Gateway, press 'Escape', and press 'Y' to quit safely without corrupting data.",
-            imgSrc: "images/tpro-15-navigation.jpg"
+            imgSrc: "images/T15.png"
         }
     ]
 });
@@ -236,7 +236,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "You can press F11 from the Gateway of Tally at any point in the future to turn these features on or off.",
-            imgSrc: "images/tpro-10-f11.jpg"
+            imgSrc: "images/T16.png"
         },
         {
             heading: "Understanding Group Hierarchy",
@@ -258,7 +258,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Gateway of Tally > Chart of Accounts > Groups (To view the entire tree structure).",
-            imgSrc: "images/tpro-11-groups.jpg"
+            imgSrc: "images/T17.png"
         },
         {
             heading: "Creating Ledgers & Assigning Opening Balances",
@@ -277,7 +277,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "You can enter multiple opening balances rapidly from Gateway > Chart of Accounts > Ledgers > Press Alt+H (Multi Masters) > Multi Alter.",
-            imgSrc: "images/tpro-13-opening-bal.jpg"
+            imgSrc: "images/T18.png"
         }
     ]
 });
@@ -308,7 +308,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "F4 = Internal Cash/Bank movement ONLY.",
-            imgSrc: "images/tpro-14-contra.jpg"
+            imgSrc: "images/T19.png"
         },
         {
             heading: "Payment (F5) and Receipt (F6) Vouchers",
@@ -325,7 +325,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "F5 = Money Out | F6 = Money In.",
-            imgSrc: "images/tpro-15-payment-receipt.jpg"
+            imgSrc: "images/T20.png"
         },
         {
             heading: "Journal Voucher (F7)",
@@ -346,7 +346,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "F7 = Non-Cash Adjustments and Credit Purchases of Assets.",
-            imgSrc: "images/tpro-16-journal.jpg"
+            imgSrc: "images/T21.png"
         },
         {
             heading: "Sales (F8) & Purchase (F9) Vouchers",
@@ -364,7 +364,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Press Ctrl+H (Change Mode) in F8/F9 to switch between 'Item Invoice' (for inventory) and 'As Voucher' (for manual Dr/Cr entries).",
-            imgSrc: "images/tpro-17-sales-purchase.jpg"
+            imgSrc: "images/T22.png"
         },
         {
             heading: "Credit/Debit Notes & Day Book Overview",
@@ -384,7 +384,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Press F10 (Other Vouchers) if you forget the shortcuts for Debit/Credit Notes.",
-            imgSrc: "images/tpro-18-notes.jpg"
+            imgSrc: "images/T23.png"
         }
     ]
 });
@@ -412,7 +412,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Always assign the correct UQC (Unique Quantity Code) to prevent errors when generating e-Way bills or GST Returns.",
-            imgSrc: "images/tpro-20-units.jpg"
+            imgSrc: "images/T24.png"
         },
         {
             heading: "Creating Stock Groups, Categories & Items",
@@ -431,7 +431,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Press F12 while creating a Stock Item to enable item descriptions, part numbers, or alternative units.",
-            imgSrc: "images/tpro-21-stock-items.jpg"
+            imgSrc: "images/T25.png"
         },
         {
             heading: "Godown Creation and Tracking",
@@ -448,7 +448,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Tally provides a default godown named 'Main Location'.",
-            imgSrc: "images/tpro-22-godowns.jpg"
+            imgSrc: "images/T26.png"
         },
         {
             heading: "Entering Opening Stock & Inventory Reports",
@@ -466,7 +466,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Press F12 in Stock Summary to show Opening Balance, Goods Inwards, Goods Outwards, and Closing Balance side-by-side.",
-            imgSrc: "images/tpro-24-stock-summary.jpg"
+            imgSrc: "images/T27.png"
         }
     ]
 });
@@ -498,7 +498,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Never hard-code the tax rate (like 'CGST 9%') into the ledger. Keep it generic ('CGST') and let Tally pull the exact rate from the Stock Item.",
-            imgSrc: "images/tpro-26-tax-ledgers.jpg"
+            imgSrc: "images/T28.png"
         },
         {
             heading: "GST-enabled Sales & Purchase Entries",
@@ -514,7 +514,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "If the tax does not calculate automatically, immediately check if the Customer's State matches your State.",
-            imgSrc: "images/tpro-27-gst-entries.jpg"
+            imgSrc: "images/T29.png"
         },
         {
             heading: "GSTR-1, GSTR-3B Reporting in Tally",
@@ -533,7 +533,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Alt + G > type 'GSTR-1' or 'GSTR-3B'.",
-            imgSrc: "images/tpro-28-gstr-returns.jpg"
+            imgSrc: "images/T30.png"
         },
         {
             heading: "TDS Deduction & TCS Entries",
@@ -551,7 +551,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "TDS is almost always deducted via a Journal Entry before the actual payment is made.",
-            imgSrc: "images/tpro-29-tds-entries.jpg"
+            imgSrc: "images/tpro-29-tds-entries.png"
         }
     ]
 });
@@ -578,7 +578,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Proper employee grouping allows you to process salaries for whole departments at once.",
-            imgSrc: "images/tpro-31-payroll-enable.jpg"
+            imgSrc: "images/tpro-31-payroll-enable.png"
         },
         {
             heading: "Attendance & Pay Heads Configuration",
@@ -597,7 +597,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Pay Heads define the logic. Salary Details attach that logic to the specific person.",
-            imgSrc: "images/tpro-33-pay-heads.jpg"
+            imgSrc: "images/tpro-33-pay-heads.png"
         },
         {
             heading: "Processing Payroll & Payslip Generation",
@@ -614,7 +614,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Ctrl + F (Payroll Autofill) is the most powerful automation button in the payroll system.",
-            imgSrc: "images/tpro-34-payroll-process.jpg"
+            imgSrc: "images/tpro-34-payroll-process.png"
         }
     ]
 });
@@ -640,7 +640,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Gateway > Banking > Bank Reconciliation (or Alt+R from the bank ledger display).",
-            imgSrc: "images/tpro-35-brs.jpg"
+            imgSrc: "images/tpro-35-brs.png"
         },
         {
             heading: "Cheque Printing & e-Banking Integration",
@@ -657,7 +657,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Always use 'Print Preview' to check alignment before wasting a real physical cheque.",
-            imgSrc: "images/tpro-36-cheque-print.jpg"
+            imgSrc: "images/tpro-36-cheque-print.png"
         }
     ]
 });
@@ -687,7 +687,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Save your data backup (Alt+Y) in your student folder after completing the project.",
-            imgSrc: "images/tpro-39-project1.jpg"
+            imgSrc: "images/tpro-39-project1.png"
         },
         {
             heading: "Project 2: The Service & Taxation Challenge",
@@ -707,7 +707,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "TDS must ALWAYS be deducted via a Journal entry before processing the Payment voucher.",
-            imgSrc: "images/tpro-40-project2.jpg"
+            imgSrc: "images/tpro-40-project2.png"
         },
         {
             heading: "Project 3: Advanced Payroll Automation",
@@ -724,7 +724,7 @@ tallyProBookData.push({
                 </ul>
             </div>`,
             shortcut: "Ensure the month has 30 days in your calculation settings.",
-            imgSrc: "images/tpro-41-project3.jpg"
+            imgSrc: "images/tpro-41-project3.png"
         }
     ]
 });
