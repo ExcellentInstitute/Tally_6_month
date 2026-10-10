@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <script>
+        // Helper to detect if running inside the Mobile App
+        function isMobileApp() {
+            return !!(window.ExcellentBridge || window.isExcellentMobileApp || new URLSearchParams(window.location.search).get('auth') === 'app');
+        }
+
         // Universal Gatekeeper Script
+        if (isMobileApp()) {
+            localStorage.setItem('excellent_auth', 'true');
+        }
+
         if (localStorage.getItem('excellent_auth') !== 'true') {
             document.addEventListener("DOMContentLoaded", function() {
+                if (isMobileApp()) {
+                    localStorage.setItem('excellent_auth', 'true');
+                    return;
+                }
+
                 document.body.style.visibility = "hidden"; 
                 document.body.style.overflow = "hidden";
                 
@@ -54,7 +68,6 @@
     
     <style>
         :root {
-            /* Tally Prime Professional Teal Palette */
             --primary: #0f766e; 
             --primary-light: #ccfbf1;
             --accent: #0d9488;
@@ -136,7 +149,7 @@
 
         .brand h2 { margin: 0; color: var(--primary); font-size: 1.3rem; font-weight: 700; cursor: pointer; }
 
-        /* Print Button */
+        /* Action Buttons */
         .action-btns button {
             background-color: var(--surface);
             color: var(--text-main);
@@ -161,7 +174,6 @@
         /* --- Main Layout & Sidebar --- */
         .main-container { display: flex; flex: 1; overflow: hidden; }
 
-        /* Sidebar with Smooth Collapse Transition */
         .sidebar {
             width: 320px;
             background-color: var(--surface);
@@ -177,7 +189,6 @@
             opacity: 1;
         }
         
-        /* The Collapsed State for Sidebar */
         .sidebar.collapsed {
             width: 0;
             padding: 24px 0;
@@ -224,7 +235,7 @@
         .note-section { pointer-events: none; }
         .note-section.allow-select { pointer-events: auto; }
 
-        /* --- NEW ORGANIZATION: TOPIC CARDS & TYPOGRAPHY --- */
+        /* --- TOPIC CARDS & TYPOGRAPHY --- */
         .chapter-header {
             background: var(--surface);
             padding: 30px 40px;
@@ -273,14 +284,13 @@
             margin-bottom: 20px;
         }
         
-        /* Proper spacing for inner lists and paragraphs created by JS data */
         .topic-text p { margin-top: 0; margin-bottom: 15px; }
         .topic-text ul { padding-left: 20px; margin-bottom: 15px; }
         .topic-text li { margin-bottom: 8px; }
 
         /* KEYBOARD SHORTCUT STYLING */
         .shortcut-box {
-            background-color: #f0fdfa; /* Extremely light teal */
+            background-color: #f0fdfa;
             border-left: 4px solid var(--accent);
             padding: 16px 20px;
             margin: 20px 0;
@@ -394,7 +404,6 @@
     <!-- Header -->
     <div class="header">
         <div class="brand">
-            <!-- Sidebar Toggle Button -->
             <button id="sidebar-toggle" class="toggle-btn" onclick="toggleSidebar()" title="Hide/Show Menu">
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -404,7 +413,7 @@
             <h2 onclick="loadDashboard()">Excellent Institute</h2>
         </div>
         <div class="action-btns">
-            <button onclick="window.print()">🖨️ Print / PDF</button>
+            <button id="print-download-btn" onclick="handlePrintOrDownload()">🖨️ Print / PDF</button>
         </div>
     </div>
 
@@ -442,9 +451,13 @@
         const navContainer = document.getElementById('nav-container');
         const contentDisplay = document.getElementById('content-display');
         const sidebar = document.getElementById('main-sidebar');
+        const actionBtn = document.getElementById('print-download-btn');
         
-        // Dedicated Tally Course Lock
-        let isTallyUnlocked = false; 
+        // Tracks active chapter index (null when on Home/Dashboard)
+        let currentActiveChapterIndex = null;
+
+        // Dedicated Tally Course Lock (Remembers unlock in session/storage or automatically in mobile app)
+        let isTallyUnlocked = localStorage.getItem('tally_unlocked') === 'true' || isMobileApp();
 
         // 1. Initialize Application
         function initApp() {
@@ -452,22 +465,48 @@
                 contentDisplay.innerHTML = `<h2 style="color:red; text-align:center; padding:50px;">Awaiting Data File...</h2>`;
                 return;
             }
+
+            // In mobile app, adapt action button label
+            if (isMobileApp() && actionBtn) {
+                actionBtn.innerHTML = '📥 Download PDF';
+            }
             
             // Generate Sidebar Buttons from the Book Data
             tallyProBookData.forEach((chapter, index) => {
                 const btn = document.createElement('button');
                 btn.className = 'nav-btn note-nav-btn';
                 
-                // Everything is strictly locked initially
                 let displayIcon = isTallyUnlocked ? '📒' : '🔒';
-                
                 btn.innerHTML = `${displayIcon} ${chapter.title.split(':')[0]}`; 
                 
                 btn.onclick = () => loadContent(index, btn);
                 navContainer.appendChild(btn);
             });
             
-            loadEntryScreen(); // Start on the Entry Preview screen
+            // Check if specific chapter was targeted via URL parameter or hash
+            const directChapterIndex = checkUrlForChapter();
+            if (directChapterIndex !== null) {
+                loadContent(directChapterIndex);
+            } else {
+                loadEntryScreen();
+            }
+        }
+
+        // Check URL parameter (?chapter=1, ?module=module1, or #module1)
+        function checkUrlForChapter() {
+            const urlParams = new URLSearchParams(window.location.search);
+            let chapterParam = urlParams.get('chapter') || urlParams.get('module') || window.location.hash.replace('#', '');
+            if (!chapterParam) return null;
+
+            chapterParam = chapterParam.toLowerCase().trim();
+            const num = parseInt(chapterParam.replace('module', ''));
+            if (!isNaN(num) && num >= 1 && num <= tallyProBookData.length) {
+                return num - 1;
+            }
+            const foundIndex = tallyProBookData.findIndex(ch => ch.id && ch.id.toLowerCase() === chapterParam);
+            if (foundIndex !== -1) return foundIndex;
+
+            return null;
         }
 
         // 2. Sidebar Toggle Logic
@@ -477,6 +516,7 @@
 
         // 3. Load Entry Screen
         function loadEntryScreen() {
+            currentActiveChapterIndex = null;
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
 
             let html = `
@@ -500,6 +540,7 @@
 
         // 4. Load Dashboard (Home Grid)
         function loadDashboard() {
+            currentActiveChapterIndex = null;
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById('home-btn').classList.add('active');
 
@@ -511,10 +552,8 @@
                 </div>
                 <div class="dashboard-grid">`;
             
-            // Generate a card for every chapter
             if (typeof tallyProBookData !== 'undefined') {
                 tallyProBookData.forEach((chapter, index) => {
-                    
                     let isLocked = !isTallyUnlocked;
                     let icon = isLocked ? '🔒' : '📒';
                     let lockedText = isLocked ? '<span style="color:#ef4444; font-size:0.9rem;"> (Locked)</span>' : '';
@@ -536,10 +575,12 @@
         // 5. Load Specific Chapter Content
         function loadContent(index, clickedBtn) {
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            if(clickedBtn) clickedBtn.classList.add('active');
+            
+            const targetBtn = clickedBtn || document.querySelectorAll('.note-nav-btn')[index];
+            if (targetBtn) targetBtn.classList.add('active');
 
-            // --- STRICT TALLY COURSE LOCK ---
-            if (!isTallyUnlocked) {
+            // --- STRICT TALLY COURSE LOCK (For web visitors) ---
+            if (!isTallyUnlocked && !isMobileApp()) {
                 let lockHtml = `
                 <div class="content-wrapper allow-select" style="text-align: center; padding: 80px 20px; background: var(--surface); border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-md);">
                     <div style="font-size: 5rem; margin-bottom: 10px;">🔒</div>
@@ -562,10 +603,17 @@
                 return; 
             }
 
+            // Register active chapter
+            currentActiveChapterIndex = index;
+
+            // 🚨 ADMOB INTERSTITIAL BRIDGE: Notify mobile app that chapter was selected
+            if (isMobileApp() && window.ExcellentBridge) {
+                window.ExcellentBridge.postMessage('SHOW_INTERSTITIAL_AD');
+            }
+
             // --- Render the Actual Content ---
             const chapter = tallyProBookData[index];
             
-            // The Chapter Header is now separated from the topics
             let htmlContent = `
             <div class="content-wrapper">
                 <div class="note-section allow-select">
@@ -573,7 +621,6 @@
                         <h1>${chapter.title}</h1>
                     </div>`;
             
-            // Every topic is now mapped into its own beautiful floating card
             chapter.topics.forEach(topic => {
                 htmlContent += `
                 <div class="topic-card">
@@ -592,10 +639,10 @@
                     htmlContent += `<div class="img-caption">Figure: ${topic.heading}</div>`;
                 }
                 
-                htmlContent += `</div>`; // Close topic-card
+                htmlContent += `</div>`;
             });
             
-            htmlContent += `</div></div>`; // Close note-section & content-wrapper
+            htmlContent += `</div></div>`;
             
             contentDisplay.innerHTML = htmlContent;
             contentDisplay.scrollTop = 0;
@@ -611,20 +658,40 @@
             
             if (input === "TALLY") {
                 isTallyUnlocked = true;
+                localStorage.setItem('tally_unlocked', 'true');
                 
-                // Instantly turn all 🔒 into 📒
                 document.querySelectorAll('.note-nav-btn').forEach((btn) => {
                     btn.innerHTML = btn.innerHTML.replace('🔒', '📒');
                 });
                 
-                const btn = document.querySelectorAll('.note-nav-btn')[index];
-                loadContent(index, btn); 
+                loadContent(index); 
             } else {
                 document.getElementById('wrong-pass-msg').style.display = 'block';
             }
         }
 
-        // 7. Zoomable Lightbox Logic
+        // 7. PRINT / DOWNLOAD HANDLER (Dual-Mode & Single Chapter Isolation)
+        function handlePrintOrDownload() {
+            if (currentActiveChapterIndex === null) {
+                alert("Please select and open a specific chapter before printing or downloading.");
+                return;
+            }
+
+            if (isMobileApp() && window.ExcellentBridge) {
+                // Trigger Rewarded Ad / Virtual Coin Gate in Flutter App
+                window.ExcellentBridge.postMessage('SHOW_REWARDED_AD');
+            } else {
+                // Desktop: Standard single-chapter print
+                window.print();
+            }
+        }
+
+        // Callback invoked by Flutter when the rewarded ad or coin payment succeeds
+        window.triggerWebDownload = function() {
+            window.print();
+        };
+
+        // 8. Zoomable Lightbox Logic
         function openLightbox(src) {
             const img = document.getElementById('lightbox-img');
             img.src = src;
@@ -644,7 +711,7 @@
             img.classList.toggle('zoomed');
         }
 
-        // 8. Drag-to-Scroll Logic
+        // 9. Drag-to-Scroll Logic
         let isDown = false;
         let startY;
         let scrollTop;
