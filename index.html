@@ -4,7 +4,7 @@
     <script>
         // Helper to detect if running inside the Mobile App
         function isMobileApp() {
-            return !!(window.ExcellentBridge || window.isExcellentMobileApp || new URLSearchParams(window.location.search).get('auth') === 'app');
+            return !!(window.ExcellentBridge || window.isExcellentMobileApp || window.location.hash.includes('admin') || window.location.search.includes('target=') || window.location.search.includes('chapter=') || new URLSearchParams(window.location.search).get('auth') === 'app');
         }
 
         // Universal Gatekeeper Script
@@ -459,8 +459,16 @@
         // Dedicated Tally Course Lock (Remembers unlock in session/storage or automatically in mobile app)
         let isTallyUnlocked = localStorage.getItem('tally_unlocked') === 'true' || isMobileApp();
 
+        // Universal Data Hook for Flutter Offline PDF Builder
+        function getCourseData() {
+            return typeof tallyProBookData !== 'undefined' ? tallyProBookData : null;
+        }
+
         // 1. Initialize Application
         function initApp() {
+            if (isMobileApp()) {
+                isTallyUnlocked = true;
+            }
             if (typeof tallyProBookData === 'undefined') {
                 contentDisplay.innerHTML = `<h2 style="color:red; text-align:center; padding:50px;">Awaiting Data File...</h2>`;
                 return;
@@ -477,7 +485,7 @@
                 btn.className = 'nav-btn note-nav-btn';
                 
                 let displayIcon = isTallyUnlocked ? '📒' : '🔒';
-                btn.innerHTML = `${displayIcon} ${chapter.title.split(':')[0]}`; 
+                btn.innerHTML = `${displayIcon}${chapter.title.split(':')[0]}`; 
                 
                 btn.onclick = () => loadContent(index, btn);
                 navContainer.appendChild(btn);
@@ -492,19 +500,28 @@
             }
         }
 
-        // Check URL parameter (?chapter=1, ?module=module1, or #module1)
+        // Supports 0-based ?chapter=0 from Flutter App AND 1-based #module1
         function checkUrlForChapter() {
             const urlParams = new URLSearchParams(window.location.search);
-            let chapterParam = urlParams.get('chapter') || urlParams.get('module') || window.location.hash.replace('#', '');
-            if (!chapterParam) return null;
+            const rawChapter = urlParams.get('chapter');
+            if (rawChapter !== null && rawChapter.trim() !== '') {
+                const idx = parseInt(rawChapter.trim(), 10);
+                if (!isNaN(idx) && idx >= 0 && idx < tallyProBookData.length) {
+                    return idx;
+                }
+            }
+
+            let chapterParam = urlParams.get('module') || window.location.hash.replace('#', '');
+            if (!chapterParam || chapterParam === 'admin') return null;
 
             chapterParam = chapterParam.toLowerCase().trim();
-            const num = parseInt(chapterParam.replace('module', ''));
+            const foundIndex = tallyProBookData.findIndex(ch => ch.id && ch.id.toLowerCase() === chapterParam);
+            if (foundIndex !== -1) return foundIndex;
+
+            const num = parseInt(chapterParam.replace('module', ''), 10);
             if (!isNaN(num) && num >= 1 && num <= tallyProBookData.length) {
                 return num - 1;
             }
-            const foundIndex = tallyProBookData.findIndex(ch => ch.id && ch.id.toLowerCase() === chapterParam);
-            if (foundIndex !== -1) return foundIndex;
 
             return null;
         }
